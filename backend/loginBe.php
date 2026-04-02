@@ -1,0 +1,120 @@
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php'; // Ajuste selon ton chemin d'autoload
+
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../'); // remonte d’un dossier vers eco-ride.online/
+$dotenv->load();
+
+$host = $_ENV['DB_HOST'];
+$port = $_ENV['DB_PORT'];
+$dbname = $_ENV['DB_NAME'];
+$user = $_ENV['DB_USER'];
+$pass = $_ENV['DB_PASSWORD'];
+
+
+$pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $user, $pass);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+if (isset($_POST['submit'])) {
+    // Vérification du token CSRF
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        die("Impossible de charger la page, le formulaire est invalide");
+    }
+
+
+    if (!empty($_POST['email']) && !empty($_POST['password'])) {
+        $email = htmlspecialchars($_POST['email']);
+        $password = $_POST['password'];
+
+
+
+        try {
+            $stmt = $pdo->prepare("SELECT COUNT(*) FROM utilisateurs WHERE email = :email");
+            $stmt->bindParam(':email', $email);
+            $stmt->execute();
+            $count = $stmt->fetchColumn(); // Récupère la première colonne du résultat (le count)
+
+            if ($count > 0) {
+                $stmt = $pdo->prepare("SELECT password FROM utilisateurs WHERE email = :email");
+                $stmt->bindParam(':email', $email);
+                $stmt->execute();
+                $motDePasseHacheBDD = $stmt->fetchColumn(); // Récupère le mot de passe hashé
+
+
+
+                if ($motDePasseHacheBDD) {
+                    // Maintenant, vous avez le mot de passe hashé de la base de données dans $motDePasseHacheBDD
+                    // Vous pouvez maintenant vérifier le mot de passe entré par l'utilisateur :
+                    if (isset($_POST['password'])) {
+                        $motDePasseEntre = $_POST['password'];
+                        if (password_verify($motDePasseEntre, $motDePasseHacheBDD)) {
+
+
+                            $_SESSION['loggedin'] = true;
+                            $stmt = $pdo->prepare("SELECT user_id FROM utilisateurs WHERE email = :email");
+                            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                            $stmt->execute();
+
+
+                            $userIdFromDatabase = $stmt->fetchColumn();
+                            $_SESSION['user_id'] = $userIdFromDatabase; // Stockez l'ID en session
+
+                            $stmt = $pdo->prepare("SELECT photo FROM utilisateurs WHERE email = :email");
+                            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                            $stmt->execute();
+                            $photoFromDatabase = $stmt->fetchColumn();
+                            $_SESSION['photo'] = basename($photoFromDatabase);  // Stockez la photo en session
+
+
+
+                            if ($userIdFromDatabase !== false) {
+                                $_SESSION['user_id'] = $userIdFromDatabase; // Stockez l'ID en session
+                            } else {
+                                // Gérer le cas où l'ID n'est pas trouvé (devrait rarement arriver si l'email existe)
+                                echo "Erreur : Impossible de récupérer l'ID de l'utilisateur.";
+
+                                // Vous pourriez envisager de déconnecter l'utilisateur ou d'afficher un message d'erreur.
+                            }
+                            try {
+                                $stmt = $pdo->prepare('SELECT role FROM utilisateurs WHERE user_id = :user_id');
+                                $stmt->bindParam(':user_id', $_SESSION['user_id']);
+                                $stmt->execute();
+                                $role = $stmt->fetchColumn();
+                                if ($role == 'employee') {
+                                    $_SESSION['role'] = 'employee';
+                                    header("Location: https://eco-ride.online/employee");
+                                    exit();
+                                } elseif ($role == 'admin') {
+                                    $_SESSION['role'] = 'admin';
+                                    header("Location: https://eco-ride.online/admin");
+                                    exit();
+                                } elseif ($role == 'user') {
+                                    $_SESSION['role'] = 'user';
+                                    header("Location: https://eco-ride.online/account");
+                                    exit();
+                                }
+                            } catch (PDOException $e) {
+                                echo "Erreur lors de la récupération du rôle : " . $e->getMessage();
+                            }
+
+                            // Ici, vous pouvez connecter l'utilisateur (démarrer une session, etc.)
+                        } else {
+                            $error = "Mot de passe incorrect";
+                        }
+                    } else {
+                        $error = "Veuillez entrer un mot de passe";
+                    }
+                } else {
+                    $error = "Aucun mot de passe trouvé pour cet utilisateur";
+                }
+            } else {
+                $error = "Aucun utilisateur trouvé avec cet email";
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+}

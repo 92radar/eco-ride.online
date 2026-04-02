@@ -1,0 +1,141 @@
+* {
+    font-family: 'Marianne';
+}
+
+p {
+    font-size: 20px;
+    position: relative;
+    left: 5px;
+    top: 25px;
+
+}
+
+
+
+
+
+
+@keyframes pulseEffect {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+}
+
+
+
+.ligne-horizontale {
+    border-bottom: 1px solid #ccc;
+    /* Couleur et épaisseur de la ligne */
+    width: 100%;
+    /* La ligne s'étend sur toute la largeur */
+    margin-top: 50px;
+}
+
+.sidebar {
+    width: 150px;
+    /* Adjust width as needed */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-bottom: 100px;
+    /* Space between sidebar and content */
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filter-group {
+    margin-bottom: 15px;
+}
+
+.price-range input[type="number"],
+.duration-filter input[type="text"] {
+    width: 80%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.rating-filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.star {
+    color: rgb(59, 59, 57);
+    font-size: 1.2em;
+    margin-right: 2px;
+}
+
+.star:last-child {
+    margin-right: 0;
+}
+
+.apply-filters-button {
+    padding: 10px 15px;
+    background-color: #607c9a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.apply-filters-button:hover {
+    border: solid 2px #080808;
+}
+
+.publication-cadre {
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.publication-cadre .menu-container {
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    z-index: 10;
+}
+
+
+
+.menu-container .menu-btn:hover {
+    animation: pulseEffect 1s infinite;
+    background-color: #1e3c38;
+
+    color: #0c6b5b;
+
+}
+
+
+
+.utilisateur {
+    font-weight: bold;
+
+}
