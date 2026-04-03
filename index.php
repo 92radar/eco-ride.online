@@ -360,14 +360,14 @@ main {
     </nav>
     <div class="c-container">
 
-        <h5>Notre engagement</h5>
+        <h1 style="color: #000000; text-transform: uppercase;">Notre engagement</h1>
 
 
         <ul>
             <li>
 
                 <h2>VISION</h2></br>
-                <p2>Une plateforme de covoiturage responsable et soucieuse de l’environnement.</p2>
+                <p>Une plateforme de covoiturage responsable et soucieuse de l’environnement.</p>
                 <img src="../images/vision.png" alt="image d'une ampoule allumé"></br>
             </li>
 
@@ -379,11 +379,11 @@ main {
             <li>
 
                 <h2>MISSION</h2></br>
-                <p2> Soutenir la cause écologique est notre principale mission. Notre objectif est de réduire par
+                <p> Soutenir la cause écologique est notre principale mission. Notre objectif est de réduire par
                     trois
                     l'impact environnemental de vos déplacements. Participez à la révolution verte en utilisant
                     notre
-                    plateforme de covoiturage.</p2>
+                    plateforme de covoiturage.</p>
                 <img src="../images/mission.png" alt="illustration de la planete terre"></br>
             </li>
 
@@ -392,9 +392,9 @@ main {
 
             <li>
                 <h2>VALEURS</h2></br>
-                <p2>Chez <u>ECORIDE</u>,Nous prônons des valeurs écologiques pour une consommation responsable et
+                <p>Chez <u>ECORIDE</u>,Nous prônons des valeurs écologiques pour une consommation responsable et
                     une
-                    approche pragmatique de la résolution des problèmes actuels.</p2><img src="../images/valeurs.png"
+                    approche pragmatique de la résolution des problèmes actuels.</p><img src="../images/valeurs.png"
                     alt="image de trois mains qui se reunissent">
             </li>
         </ul>
