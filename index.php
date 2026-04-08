@@ -46,27 +46,10 @@ if (isset($_POST['logout'])) {
     <!-- Favicon (PNG et ICO pour compatibilité maximale) -->
     <link rel="icon" type="image/png" href="https://eco-ride.online/images/IconOnly_Transparent_NoBuffer-2-copie-32.png">
 
-    <!-- Datadog RUM -->
-     
-    <script>import {datadogRum} from '@datadog/browser-rum'
-                    
-        datadogRum.init({
-            applicationId: '9e03d4d1-9c3e-4b3f-9090-0b19766e2bf5',
-            clientToken: 'pub573dbd4f632db05201c5bbee64843458',
-            site: 'datadoghq.eu',
-            service: 'ECORIDE',
-            env: 'prod',
-            version: '1.0.0',
-            sessionSampleRate: 100,
-            sessionReplaySampleRate: 20,
-            trackResources: true,
-            trackUserInteractions: true,
-            trackLongTasks: true,
-            defaultPrivacyLevel: 'mask-user-input',
 
-
-        });
-    </script>
+    <!-- datadog -->
+   <script type="module" src="../JS/app.js"></script>
+   
     <!-- Stylesheets -->
 
     <link rel="stylesheet" href="../styles/font.css">
@@ -997,6 +980,7 @@ main {
 
     <script src="../JS/navbarOnScroll.js"></script>
     <script src="../JS/toggleResearch.js"></script>
+    
     
 
 
