@@ -10,79 +10,17 @@ if (empty($_SESSION['csrf_token'])) {
 }
 
 ?>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../styles/login.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="../styles/profile-1.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../styles/homecopy.css">
-<link rel="stylesheet" href="../styles/research.css">
-<link rel="stylesheet" href="../styles/font.css">
+    
+    <title>Login to Ecoride</title>
+</head>
 <style>
-    body {
-        overflow-y: scroll;
-        overflow-x: hidden;
-        max-width: 100%;
-    }
-
-
-
-    footer {
-        color: #ffffff;
-    }
-
-    h1 {
-        font-size: 24px;
-        color: #ffffff;
-    }
-
-    input,
-    textarea,
-    select {
-        background-color: #ffffff;
-        /* blanc */
-        color: #000000;
-        /* texte noir */
-
-    }
-
-  
-    .eco-ride {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 100%;
-        max-height: 100%;
-        transition: opacity 0.5s ease;
-        font-size: 3em;
-        font-weight: lighter;
-        color: #ffffff;
-        display: none;
-        text-decoration: none;
-
-    }
-
-    .eco-ride a {
-        text-decoration: none;
-        color: #ffffff;
-
-        font-weight: lighter;
-    }
-
-    .eco-ride.show {
-        display: block;
-    }
-
-    span {
-        color: #ffffff;
-    }
-
-    nav ul .fas {
-        color: #ffffff;
-    }
 
 
     @keyframes bounceIn {
@@ -110,9 +48,6 @@ if (empty($_SESSION['csrf_token'])) {
 <body>
     <nav>
         <div id="brand">
-            <div class="eco-ride">
-                <h1>ECORIDE</h1>
-            </div>
 
 
 
@@ -304,18 +239,9 @@ if (empty($_SESSION['csrf_token'])) {
         </div>
     </div>
     <footer>
-        <div class="footer-content">
-            <h3>ECORIDE</h3>
-            <p>Rejoignez-nous dans notre mission pour un avenir plus vert et plus durable. Ensemble, nous
-                pouvons faire la différence.</p>
-            <ul class="socials">
-                <li><i class="fab fa-instagram fa-2x icon"></i></a></li>
+        <h1>ECORIDE</h1>
+        <p>Designed by <span>Driss</span>Copyright &copy;2026 ECORIDE.</p> 
 
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>copyright &copy;2024 ECORIDE. designed by <span>Driss</span></p>
-        </div>
     </footer>
     <script src="../JS/navbarOnScroll.js"></script>
     <script src="../JS/toggleResearch.js"></script>

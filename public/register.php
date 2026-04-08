@@ -6,89 +6,22 @@ session_start();
 
 require_once __DIR__ . '/../backend/registerBe.php';
 ?>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Favicon (PNG et ICO pour compatibilité maximale) -->
-<link rel="icon" type="image/png" href="https://eco-ride.online/images/IconOnly_Transparent_NoBuffer-2-copie-32.png">
-<link rel="stylesheet" href="../styles/login.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="../styles/profile-1.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../styles/homecopy.css">
-<link rel="stylesheet" href="../styles/research.css">
-
-
-<link rel="stylesheet" href="../styles/font.css">
-<style>
-    body {
-        overflow-y: scroll;
-        overflow-x: hidden;
-        max-width: 100%;
-    }
-
-    footer {
-        color: #ffffff;
-    }
-
-    h1 {
-        font-size: 24px;
-        color: #ffffff;
-    }
-
-    input,
-    textarea,
-    select {
-        background-color: #ffffff;
-        /* blanc */
-        color: #000000;
-        /* texte noir */
-
-    }
-
-   
-
-    .eco-ride {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 100%;
-        max-height: 100%;
-        transition: opacity 0.5s ease;
-        font-size: 3em;
-        font-weight: lighter;
-        color: #ffffff;
-        display: none;
-        text-decoration: none;
-
-    }
-
-    .eco-ride a {
-        text-decoration: none;
-        color: #ffffff;
-
-        font-weight: lighter;
-    }
-
-    .eco-ride.show {
-        display: block;
-    }
-
-
-
-    form input[type="date"]::-webkit-calendar-picker-indicator {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        pointer-events: none;
-        color: #000;
-        /* Couleur de l'icône */
-    }
-</style>
-
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <!-- stylesheet for the page -->
+    <link rel="stylesheet" href="../styles/app.css">
+    <!-- Favicon (PNG et ICO pour compatibilité maximale) -->
+    <link rel="icon" type="image/png" href="https://eco-ride.online/images/IconOnly_Transparent_NoBuffer-2-copie-32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        
+    <title>Register to ecoride</title>
+</head>
 
 <body>
     <?php if ($error) : ?>
@@ -103,8 +36,7 @@ require_once __DIR__ . '/../backend/registerBe.php';
     <?php endif; ?>
     <nav>
         <div id="brand">
-            <div class="eco-ride">
-                <h1>ECORIDE</h1>
+            <div>
             </div>
 
 
@@ -357,18 +289,9 @@ require_once __DIR__ . '/../backend/registerBe.php';
         </div>
     </div>
     <footer>
-        <div class="footer-content">
-            <h3>ECORIDE</h3>
-            <p>Rejoignez-nous dans notre mission pour un avenir plus vert et plus durable. Ensemble, nous
-                pouvons faire la différence.</p>
-            <ul class="socials">
-                <li><i class="fab fa-instagram fa-2x icon"></i></a></li>
+        <h1>ECORIDE</h1>
+        <p>Designed by <span>Driss</span>Copyright &copy;2026 ECORIDE.</p> 
 
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>copyright &copy;2024 ECORIDE. designed by <span>Driss</span></p>
-        </div>
     </footer>
     <script src="../JS/navbarOnScroll.js"></script>
 
