@@ -1,12 +1,36 @@
-
 <?php
 
-$host = $_ENV['DB_HOST'];
-$port = $_ENV['DB_PORT'];
-$dbname = $_ENV['DB_NAME'];
-$user = $_ENV['DB_USER'];
-$pass = $_ENV['DB_PASSWORD'];
+require_once __DIR__ . '/../vendor/autoload.php';
 
+// Chemin vers la racine du projet (où se trouvent .env et .env.local)
+$projectRoot = __DIR__ . '/..';
 
-$pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $user, $pass);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// Détecte l'environnement en priorité via APP_ENV, sinon via l'hôte.
+$appEnv = $_SERVER['APP_ENV'] ?? (getenv('APP_ENV') ?: '');
+$serverName = $_SERVER['SERVER_NAME'] ?? '';
+
+$isLocal = in_array(strtolower($appEnv), ['local', 'dev', 'development'], true)
+    || in_array($serverName, ['localhost', '127.0.0.1', '::1'], true);
+
+if ($isLocal && file_exists($projectRoot . '/.env.local')) {
+    $dotenv = Dotenv\Dotenv::createImmutable($projectRoot, '.env.local');
+} else {
+    $dotenv = Dotenv\Dotenv::createImmutable($projectRoot, '.env');
+}
+
+$dotenv->safeLoad();
+
+try {
+    $host = $_ENV['DB_HOST'] ?? '127.0.0.1';
+    $port = $_ENV['DB_PORT'] ?? '3306';
+    $dbname = $_ENV['DB_NAME'] ?? '';
+    $user = $_ENV['DB_USER'] ?? '';
+    $pass = $_ENV['DB_PASSWORD'] ?? '';
+
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+} catch (PDOException $e) {
+    
+    die("Erreur de connexion SQL : " . $e->getMessage());
+}

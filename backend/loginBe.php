@@ -1,14 +1,12 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../vendor/autoload.php'; // Ajuste selon ton chemin d'autoload
+require __DIR__ . '/pdo.php';
 
-use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../'); // remonte d’un dossier vers eco-ride.online/
-$dotenv->load();
-
-require_once __DIR__ . '/pdo.php'; // Inclure le fichier de connexion PDO
+if (!isset($pdo) || !($pdo instanceof PDO)) {
+    $error = "Connexion a la base de donnees impossible.";
+    return;
+}
 
 if (isset($_POST['submit'])) {
     // Vérification du token CSRF
