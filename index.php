@@ -976,4 +976,7 @@ main {
 
     <script src="../JS/navbarOnScroll.js"></script>
     <script src="../JS/toggleResearch.js"></script>
+    <script src="../JS/datadog.js"></script>
+    
+
 </body>
