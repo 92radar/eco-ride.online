@@ -2,7 +2,7 @@
 
 
 
-require_once __DIR__ . '/backend/adminBe.php';
+require_once __DIR__ . '/../backend/adminBe.php';
 
 if (isset($_POST['logout'])) {
     // Détruire la session et rediriger vers la page de connexion
