@@ -2,7 +2,4 @@
 
 .env
 .htaccess
-node_modules
-package-lock.json
-package.json
-datadog.js
+
