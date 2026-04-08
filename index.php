@@ -8,7 +8,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
 
 
 require_once __DIR__ . '/backend/indexBe.php';
-require_once __DIR__ . './backend/send.php';
+require_once __DIR__ . '/backend/send.php';
 
 
 if (isset($_POST['logout'])) {
