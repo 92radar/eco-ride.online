@@ -7,6 +7,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 
 require_once __DIR__ . '/../backend/participerBe.php';
+
 if (isset($_POST['logout'])) {
     // Détruire toutes les variables de session
     $_SESSION = array();

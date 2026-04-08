@@ -21,7 +21,7 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(__DIR__ . '/../'); // remonte d’un dossier vers eco-ride.online/
 $dotenv->load();
 
-
+require_once __DIR__ . '/pdo.php'; 
 
 $userInfos = []; // Initialisation de $userInfos comme un tableau vide
 $error = null;
