@@ -4,9 +4,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
     $userId = $_SESSION['user_id'];
 }
 
-require_once '/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/backend/indexBe.php';
+// DIR used for local and prod environments, no need to change it when deploying
 
-require_once '/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/backend/send.php';
+
+require_once __DIR__ . '/backend/indexBe.php';
+require_once __DIR__ . '/backend/send.php';
+
+
 if (isset($_POST['logout'])) {
     // Détruire toutes les variables de session
     $_SESSION = array();

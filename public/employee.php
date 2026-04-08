@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-require_once '/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/backend/employeeBe.php';
+
+
+require_once __DIR__ . '/backend/employeeBe.php';
 
 ?>
 <!DOCTYPE html>

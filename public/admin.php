@@ -2,7 +2,7 @@
 
 
 
-require_once '/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/backend/adminBe.php';
+require_once __DIR__ . '/backend/adminBe.php';
 
 if (isset($_POST['logout'])) {
     // Détruire la session et rediriger vers la page de connexion

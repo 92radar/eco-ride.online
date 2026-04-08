@@ -5,8 +5,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-require_once '/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/backend/confirmationBe.php';
+require_once __DIR__ . '/backend/confirmationBe.php';
+
+
 if (isset($_POST['logout'])) {
+
     // Détruire toutes les variables de session
     $_SESSION = array();
 

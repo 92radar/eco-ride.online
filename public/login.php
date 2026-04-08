@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-require_once '/home/clients/5afa198c535310a01279d2a30398c842/sites/eco-ride.online/backend/loginBe.php';
+
+
+require_once __DIR__ . '/backend/loginBe.php';
 // Si le token CSRF n'existe pas encore, on le génère
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
