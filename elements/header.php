@@ -147,8 +147,6 @@ if (isset($_POST['search'])) {
     <div class="hero-scene text-center text-white">
         <div></br>
             <h1>Soyez green, voyagez et engagez vous pour la planete.</h1>
-
-
         </div>
 
         <div class=" hero-scene-content " id="sectionRecherche">

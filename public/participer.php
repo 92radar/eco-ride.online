@@ -87,16 +87,7 @@ select {
 
 }
 
-.recherche-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    transform: none;
-    max-width: 100%;
-    transition: opacity 0.5s ease;
-    padding: 20px;
-}
+
 
 h1 {
     font-size: 24px;
@@ -141,9 +132,6 @@ nav span {
     color: white;
 }
 
-.recherche-container .fas {
-    color: #000000;
-}
 
 .publication-header {
     display: flex;
@@ -238,16 +226,6 @@ nav span {
     text-align: center;
 }
 
-.iconRecherche {
-    display: none;
-
-
-}
-
-.iconRecherche.show {
-    animation: bounceIn 0.5s;
-    display: block;
-}
 
 @keyframes bounceIn {
     0% {

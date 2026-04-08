@@ -57,55 +57,6 @@ require_once __DIR__ . '/../backend/accountBe.php';
     }
 
 
-
-    input,
-    textarea,
-    select {
-        background-color: #ffffff;
-        /* blanc */
-        color: #000000;
-        /* texte noir */
-
-    }
-
-    .recherche-container {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: none;
-        max-width: 100%;
-        transition: opacity 0.5s ease;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 24px;
-        color: #ffffff;
-    }
-
-    .eco-ride {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 100%;
-        max-height: 100%;
-        transition: opacity 0.5s ease;
-        font-size: 3em;
-        font-weight: lighter;
-        color: #ffffff;
-        display: none;
-        text-decoration: none;
-
-    }
-
-
-
-    .eco-ride.show {
-        display: block;
-    }
-
     .profil button {
         width: 100%;
         padding: 10px;
@@ -173,110 +124,16 @@ require_once __DIR__ . '/../backend/accountBe.php';
         text-decoration: none;
 
     }
-
+/* 
     .c-container {
         margin-top: 0;
-        /* ✅ reste dans le flux */
         margin-left: 5px auto;
 
         padding: 10px;
 
 
-        /* ✅ espace depuis le haut */
     }
-
-    .c-container ul {
-        width: 90vw;
-        max-height: auto;
-        padding: 20px;
-        display: flex;
-        gap: 4vw;
-        margin: 10px;
-    }
-
-    .c-container ul li {
-        list-style-type: none;
-        background-color: #eeeeee;
-        border: 1px solid #dddddd;
-        padding: 10px;
-        max-height: auto;
-        color: #000000;
-
-        flex: 0 0 100%;
-
-    }
-
-
-
-    .c-container ul {
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-
-    }
-
-    .c-container ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    .c-container ul li {
-        scroll-snap-align: center;
-    }
-
-
-
-
-
-
-
-
-    .c-container ul {
-        anchor-name: --my-carousel;
-    }
-
-    .dots {
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .dots button {
-        border: none;
-        background: #ccc;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
-    }
-
-    .dots button.active {
-        background: #333;
-    }
-
-    footer {
-        color: white;
-        text-align: center;
-        padding: 20px;
-        background-color: #4c6faf;
-        border-top: solid 1px #3b3939;
-        font-weight: lighter;
-    }
-
-    footer a {
-        text-decoration: none;
-        color: #ffffff;
-
-    }
-
-    .iconRecherche {
-        display: none;
-
-
-    }
-
-    .iconRecherche.show {
-        animation: bounceIn 0.5s;
-        display: block;
-    }
+        /*  */
 
     @keyframes bounceIn {
         0% {
@@ -411,7 +268,7 @@ require_once __DIR__ . '/../backend/accountBe.php';
         <form method="post" class="logout-form" type="hidden">
             <button type="submit" name="logout" class="logout-btn">Se déconnecter</button>
         </form>
-        <div class="ligne-horizontale"></div></br>
+        <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
         <?php if (isset($success)) : ?>
             <div class="alert alert-success container" role="alert">
                 <?= $success ?></br>
@@ -489,7 +346,7 @@ require_once __DIR__ . '/../backend/accountBe.php';
 
 
                     </div>
-                    <div class="ligne-horizontale"></div></br>
+                    <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
 
 
                     <h3>AJOUTER UN VEHICULE</h3> </br>
@@ -546,7 +403,7 @@ require_once __DIR__ . '/../backend/accountBe.php';
                             </form>
                         </div>
                     </div>
-                    <div class="ligne-horizontale"></div></br>
+                    <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
                     <h3>Publier un trajet</h3> </br>
                     <div class="publier-trajet" id="section2">
                         <div class="publier-trajet-details">
@@ -652,7 +509,7 @@ require_once __DIR__ . '/../backend/accountBe.php';
 
                     </div></br>
         </div>
-        <div class="ligne-horizontale"></div></br>
+        <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
         <h3 id="section4">Historique des trajets en tant que voyageur</h3>
         <div class="c-container">
             <ul>
@@ -682,7 +539,7 @@ require_once __DIR__ . '/../backend/accountBe.php';
             <div class="dots"></div>
         </div>
 
-        <div class="ligne-horizontale"></div></br>
+        <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
         <h2 id="section5">Co-voiturage en tant que chauffeur</h2>
         <div class="c-container">
 
@@ -767,7 +624,7 @@ require_once __DIR__ . '/../backend/accountBe.php';
 
     </div>
 
-    <div class="ligne-horizontale"></div></br>
+    <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
 
 
 

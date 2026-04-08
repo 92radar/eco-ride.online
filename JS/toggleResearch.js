@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const departInput = document.querySelector('.depart');
     const arriveeInput = document.querySelector('.arrivee');
     const dateInput = document.querySelector('.date_depart');
-    const submitBtn = document.querySelector('.iconRecherche');
+    const submitBtn = document.querySelector('#submitSearchBtn');
 
     function checkFieldsFilled() {
         const depart = departInput.value.trim();
@@ -12,9 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const date = dateInput.value.trim();
 
         if (depart && arrivee && date) {
+            submitBtn.classList.remove('hide');
             submitBtn.classList.add('show');
         } else {
             submitBtn.classList.remove('show');
+            submitBtn.classList.add('hide');
         }
     }
 

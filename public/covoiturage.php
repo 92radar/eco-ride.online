@@ -48,16 +48,6 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
 
     }
 
-    .recherche-container {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: none;
-        max-width: 100%;
-        transition: opacity 0.5s ease;
-        padding: 20px;
-    }
 
     h1 {
         font-size: 24px;
@@ -187,9 +177,7 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
         color: white;
     }
 
-    .recherche-container .fas {
-        color: #000000;
-    }
+
 
     .menu-dropdown {
         display: none;
@@ -411,16 +399,6 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
         color: #4c6faf;
     }
 
-    .iconRecherche {
-        display: none;
-
-
-    }
-
-    .iconRecherche.show {
-        animation: bounceIn 0.5s;
-        display: block;
-    }
 
     @keyframes bounceIn {
         0% {
@@ -756,7 +734,7 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
 <div class="container" style="text-align: center; margin-top: 20px;">
 
 
-    <h5>Foire aux questions</h5></br>
+    <h3>Foire aux questions</h3></br>
 
 
     <div class="accordion" id="accordionExample" style="color:#000000">

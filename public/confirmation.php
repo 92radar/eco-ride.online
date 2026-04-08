@@ -85,16 +85,7 @@ if (isset($_POST['logout'])) {
 
     }
 
-    .recherche-container {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: none;
-        max-width: 100%;
-        transition: opacity 0.5s ease;
-        padding: 20px;
-    }
+  
 
     h1 {
         font-size: 24px;
@@ -139,9 +130,7 @@ if (isset($_POST['logout'])) {
         color: white;
     }
 
-    .recherche-container .fas {
-        color: #000000;
-    }
+   
 
     .publication-header {
         display: flex;
@@ -278,16 +267,7 @@ if (isset($_POST['logout'])) {
         color: #555;
     }
 
-    .iconRecherche {
-        display: none;
-
-
-    }
-
-    .iconRecherche.show {
-        animation: bounceIn 0.5s;
-        display: block;
-    }
+    
 
     @keyframes bounceIn {
         0% {

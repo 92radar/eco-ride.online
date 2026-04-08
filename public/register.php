@@ -47,16 +47,7 @@ require_once __DIR__ . '/../backend/registerBe.php';
 
     }
 
-    .recherche-container {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: none;
-        max-width: 100%;
-        transition: opacity 0.5s ease;
-        padding: 20px;
-    }
+   
 
     .eco-ride {
         position: absolute;
@@ -278,7 +269,7 @@ require_once __DIR__ . '/../backend/registerBe.php';
     </div>
     <div class="container" style="margin-top:150px; margin-bottom:50px;">
 
-        <h5>Foire aux questions</h5></br>
+        <h3>Foire aux questions</h3></br>
 
 
         <div class="accordion" id="accordionExample" style="color:#000000">

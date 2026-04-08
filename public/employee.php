@@ -33,56 +33,6 @@ require_once __DIR__ . '/../backend/employeeBe.php';
         margin: 30px auto;
     }
 
-
-
-    input,
-    textarea,
-    select {
-        background-color: #ffffff;
-        /* blanc */
-        color: #000000;
-        /* texte noir */
-
-    }
-
-    .recherche-container {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: none;
-        max-width: 100%;
-        transition: opacity 0.5s ease;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 24px;
-        color: #ffffff;
-    }
-
-    .eco-ride {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 100%;
-        max-height: 100%;
-        transition: opacity 0.5s ease;
-        font-size: 3em;
-        font-weight: lighter;
-        color: #ffffff;
-        display: none;
-        text-decoration: none;
-
-    }
-
-
-
-    .eco-ride.show {
-        display: block;
-    }
-
     .profil button {
         width: 100%;
         padding: 10px;
@@ -109,10 +59,6 @@ require_once __DIR__ . '/../backend/employeeBe.php';
         border-radius: 20px;
         color: black;
     }
-
-
-
-
 
 
     li {
@@ -145,80 +91,8 @@ require_once __DIR__ . '/../backend/employeeBe.php';
 
     .c-container {
         margin-top: 0;
-        /* ✅ reste dans le flux */
         margin-left: 5px auto;
-
         padding: 10px;
-
-
-        /* ✅ espace depuis le haut */
-    }
-
-    .c-container ul {
-        width: 90vw;
-        max-height: auto;
-        padding: 20px;
-        display: flex;
-        gap: 4vw;
-        margin: 10px;
-    }
-
-    .c-container ul li {
-        list-style-type: none;
-        background-color: #eeeeee;
-        border: 1px solid #dddddd;
-        padding: 10px;
-        max-height: auto;
-        color: #000000;
-
-        flex: 0 0 100%;
-
-    }
-
-
-
-    .c-container ul {
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-
-    }
-
-    .c-container ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    .c-container ul li {
-        scroll-snap-align: center;
-    }
-
-
-
-
-
-
-
-
-    .c-container ul {
-        anchor-name: --my-carousel;
-    }
-
-    .dots {
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .dots button {
-        border: none;
-        background: #ccc;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
-    }
-
-    .dots button.active {
-        background: #333;
     }
 
     footer {

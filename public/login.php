@@ -48,17 +48,7 @@ if (empty($_SESSION['csrf_token'])) {
 
     }
 
-    .recherche-container {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: none;
-        max-width: 100%;
-        transition: opacity 0.5s ease;
-        padding: 20px;
-    }
-
+  
     .eco-ride {
         position: absolute;
         top: 50%;
@@ -94,16 +84,6 @@ if (empty($_SESSION['csrf_token'])) {
         color: #ffffff;
     }
 
-    .iconRecherche {
-        display: none;
-
-
-    }
-
-    .iconRecherche.show {
-        animation: bounceIn 0.5s;
-        display: block;
-    }
 
     @keyframes bounceIn {
         0% {
@@ -236,7 +216,7 @@ if (empty($_SESSION['csrf_token'])) {
     </div>
     <div class="container" style="margin-top:150px; margin-bottom:50px;">
 
-        <h5>Foire aux questions</h5></br>
+        <h3>Foire aux questions</h3></br>
 
 
         <div class="accordion" id="accordionExample" style="color:#000000">
