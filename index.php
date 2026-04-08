@@ -48,8 +48,9 @@ if (isset($_POST['logout'])) {
 
 
     <!-- datadog -->
+    <script src="https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js" type="text/javascript"></script>
    <script type="module" src="../JS/app.js"></script>
-   
+
     <!-- Stylesheets -->
 
     <link rel="stylesheet" href="../styles/font.css">
