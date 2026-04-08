@@ -4,7 +4,7 @@ session_start();
 
 
 
-require_once __DIR__ . './backend/registerBe.php';
+require_once __DIR__ . '../backend/registerBe.php';
 ?>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
