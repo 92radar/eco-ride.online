@@ -158,11 +158,46 @@ if (isset($_POST['logout'])) {
 <body>
     <nav>
         <div id="brand">
-            <div class="">
-                <!-- <img src="../images/FullLogo_Transparent_NoBuffer-2.png" alt="logo ecoride"> -->
-                <!-- <div class="breathe-animation">
-                    <span>ECORIDE</span>
-                </div> -->
+            <div class="desktop">
+                <ul>
+                    <li>
+                        <a href="/"><i class="fas fa-home f"></i><span>Accueil</span></a>
+                    </li>
+                    <?php if (!isset($_SESSION['role'])): ?>
+                    <!-- Affiché seulement si l'utilisateur n'est pas connecté -->
+                    <li class="active">
+                        <a href="/login"><i class="fas fa-user f"></i><span>Connexion</span></a>
+                    </li>
+                    <li>
+                        <a href="../register"><i class="fas fa-key"></i><span>Inscription</span></a>
+                    </li>
+                    <?php endif; ?>
+
+                    <?php if (isset($_SESSION['role'])): ?>
+                    <?php if ($_SESSION['role'] === 'employee'): ?>
+                    <li><a class="dropdown-item" href="/employee"><i class="fas fa-user"></i></i>Espace
+                            employés</a></li>
+                    <?php elseif ($_SESSION['role'] === 'user'): ?>
+                    <li><a class="dropdown-item" href="/account"><i class="fas fa-user"></i></i>Profil</a>
+                    </li>
+                    <?php elseif ($_SESSION['role'] === 'admin'): ?>
+                    <li><a class="dropdown-item" href="/admin"><i class="fas fa-user"></i></i>Espace
+                            admin</a>
+                    </li>
+                    <?php endif; ?>
+
+                    <li>
+                        <form method="post" style="display:inline;">
+                            <button class="dropdown-item" name="logout"><i
+                                    class="fas fa-sign-out-alt"></i>Déconnexion</button>
+                        </form>
+                    </li>
+                    <?php endif; ?>
+
+                    <li>
+                        <a href="#"><i class="fas fa-info-circle"></i><span>A propos</span></a>
+                    </li>
+                </ul>
             </div>
 
 
@@ -200,6 +235,7 @@ if (isset($_POST['logout'])) {
                         <div class="bar"></div>
                     </div>
                 </div>
+                
 
                 <!-- Menu Classique -->
                 <ul>
@@ -245,6 +281,7 @@ if (isset($_POST['logout'])) {
 
             </div>
     </nav>
+
     <div class="c-container">
 
         <h1 style="color: #000000; text-transform: uppercase;">Notre engagement</h1>
@@ -294,7 +331,7 @@ if (isset($_POST['logout'])) {
     <div class="grid-container">
         <div class="grid-item">
 
-            <h3>Notre Equipe :</h3>
+            <h3 >Notre collectif :</h3>
             <p>Nous sommes fiers de vous présenter notre équipe engagée dans la révolution verte de nos déplacements.
                 Notre équipe se compose d'un Community manager, Mateo, en charge du contenu posté sur ce site et les
                 réseaux sociaux. Il a la charge de répondre à toute vos questions concernant notre plateforme et le
@@ -326,9 +363,9 @@ if (isset($_POST['logout'])) {
 
         <main>
             <section>
-                <h2 class="mobile">Nos destinations les plus actives</h2><br />
-                <p class="mobile">
-                    Paris<br />Lyon<br />Marseille<br />Poitiers<br />Montpellier<br />Bordeaux<br />Toulouse<br /></p>
+                <h2 class="mobile uppercase">Nos destinations les plus actives</h2><br />
+                <h3 class="mobile ">
+                    Paris<br />Lyon<br />Marseille<br />Poitiers<br />Montpellier<br />Bordeaux<br />Toulouse<br /></h3>
                 <div class="content">
 
                     <div class="grid">
@@ -435,6 +472,16 @@ if (isset($_POST['logout'])) {
                     vos déplacements est notre objectif. Participer à la révolution verte en utilisant notre
                     plateforme de
                     co-voiturage.</p></br>
+
+
+                <div class="space-between ">
+                    <img src="https://images.unsplash.com/photo-1566079211528-ec2251fcefb9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                    alt="" />
+                    <img src="https://images.unsplash.com/photo-1635863153370-6cc0a7c01e46?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                    alt="" />
+                </div>
+
+                
             </div><br />
 
 
@@ -442,13 +489,11 @@ if (isset($_POST['logout'])) {
 
         </section>
     </div>
-    <div class="search-form-section">
 
-        <div class="search-form-button">
-            <button id="add-search-btn" class="add-search-btn" type="button" aria-label="Ajouter une recherche">
-                <i class="fas fa-plus"></i>
-            </button>
-        </div>
+    <div class="search-form-button">
+        <a id="add-search-btn" class="add-search-btn" href="#ecoride-recherche" aria-label="Ajouter une recherche">
+            <i class="fas fa-plus"></i>
+        </a>
     </div>
 
     <div id="ecoride-recherche" class="hide">
@@ -603,7 +648,6 @@ if (isset($_POST['logout'])) {
                     <button type="submit" name="formulaire_contact" id="button"> Envoyer</button>
                 </fieldset>
             </form>
-            <h2>Merci de votre visite</h2>
         </div>
     </div>
     <footer>
@@ -666,8 +710,21 @@ if (isset($_POST['logout'])) {
         const toggleButton = document.getElementById("add-search-btn");
         const searchContainer = document.querySelector("#ecoride-recherche");
 
-        toggleButton.addEventListener("click", function() {
-            searchContainer.classList.toggle("active");
+        toggleButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            searchContainer.classList.add("active");
+
+            const offset = 120;
+            const targetY = searchContainer.getBoundingClientRect().top + window.pageYOffset - offset;
+
+            window.scrollTo({
+                top: targetY,
+                behavior: "smooth"
+            });
+
+            if (history.replaceState) {
+                history.replaceState(null, "", "#ecoride-recherche");
+            }
         });
     });
     </script>

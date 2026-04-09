@@ -48,6 +48,7 @@ if (empty($_SESSION['csrf_token'])) {
 <body>
     <nav>
         <div id="brand">
+            
 
 
 
