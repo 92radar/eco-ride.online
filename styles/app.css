@@ -286,6 +286,7 @@ nav ul.showMenu li {
     visibility: visible;
     float: none;
     padding-left: 0;
+    z-index: 2;
 }
 
 
@@ -313,7 +314,6 @@ ul {
 
 #word-mark {
     width: auto;
-
     background: var(--accent);
     border-radius: 90px;
     margin-left: 20px;
@@ -484,8 +484,6 @@ header {
     padding: 10px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-
-
 }
 
 
