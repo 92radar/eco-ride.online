@@ -20,13 +20,18 @@
                 <li><a class="dropdown-item" href="/employee"><i class="fas fa-user"></i></i>Espace
                         employés</a></li>
                 <?php elseif ($_SESSION['role'] === 'user'): ?>
-                <li><a class="dropdown-item" href="/account"><i class="fas fa-user"></i></i>Profil</a>
+                <li><a class="dropdown-item" href="/account"><i class="fas fa-user"></i></i>&nbsp;Profil</a>
                 </li>
                 <?php elseif ($_SESSION['role'] === 'admin'): ?>
                 <li><a class="dropdown-item" href="/admin"><i class="fas fa-user"></i></i>Espace
                         admin</a>
                 </li>
                 <?php endif; ?>
+
+
+                <li>
+                    <a href="#"><i class="fas fa-info-circle"></i><span>A propos</span></a>
+                </li>
 
                 <li>
                     <form method="post" style="display:inline;">
@@ -36,9 +41,6 @@
                 </li>
                 <?php endif; ?>
 
-                <li>
-                    <a href="#"><i class="fas fa-info-circle"></i><span>A propos</span></a>
-                </li>
             </ul>
         </div>
 

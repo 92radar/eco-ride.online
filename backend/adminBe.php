@@ -1,12 +1,4 @@
 <?php
-session_start();
-
-
-
-use Dotenv\Dotenv;
-
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../'); // remonte d’un dossier vers eco-ride.online/
-$dotenv->load();
 
 require __DIR__ . '/pdo.php';
 

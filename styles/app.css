@@ -54,6 +54,31 @@
     display: none;
 }   
 
+.m-20 {
+    margin: 20px;
+}
+.p-10 {
+    padding: 10px;
+}
+.pt-200{
+    padding-top: 200px;
+}
+.w-50 {
+    width: 20%;
+}
+.w-100 {
+    width: 100%;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
 .space-between {
     display: flex;
     justify-content: space-between;
@@ -94,24 +119,29 @@ select {
     color: #000000;
 }
 
+input[type="file"] {
+        display: block;
+        border: solid 1px #4c6faf;
+        border-radius: 20px;
+        color: black;
+    }
+
 h1 {
     font-family: 'Marianne';
     font-size: 2em;
-    padding: 20px;
+    padding-bottom: 15px;
 }
 
 
 h2 {
     font-size: 1.5em;
-    margin-left: 20px;
+    padding-bottom: 10px;
 }
 
 
 h3 {
-
     font-size: 1.25em;
-    margin-left: 20px;
-    padding: 20px;
+    padding-bottom: 5px;
 }
 
 p {

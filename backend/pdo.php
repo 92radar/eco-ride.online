@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // Chemin vers la racine du projet (où se trouvent .env et .env.local)
