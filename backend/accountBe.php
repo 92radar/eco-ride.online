@@ -1,10 +1,5 @@
 <?php
 
-// Démarrer la session pour accéder aux variables de session et les modifier
-
-
-
-
 
 
 use PHPMailer\PHPMailer\PHPMailer;

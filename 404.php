@@ -1,30 +1,9 @@
 <?php
-session_start();
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SESSION['user_id'])) {
-    $userId = $_SESSION['user_id'];
-}
-if (isset($_POST['logout'])) {
-    // Détruire toutes les variables de session
-    $_SESSION = array();
+require __DIR__ . '/pdo.php';
 
-    if (ini_get("session.use_cookies")) {
-        $params = session_get_cookie_params();
-        setcookie(
-            session_name(),
-            '',
-            time() - 42000,
-            $params["path"],
-            $params["domain"],
-            $params["secure"],
-            $params["httponly"]
-        );
-    }
-
-    session_destroy();
-
-    // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
-    header("Location: https://eco-ride.online"); // Redirige vers la page home
-    exit();
+if (!isset($pdo) || !($pdo instanceof PDO)) {
+    $error = "Connexion à la base de données impossible.";
+    return;
 }
 
 ?>
@@ -64,69 +43,6 @@ if (isset($_POST['logout'])) {
 
 </head>
 <style>
-    body {
-        overflow-y: scroll;
-        overflow-x: hidden;
-        max-width: 100%;
-    }
-
-    span {
-        color: white;
-    }
-
-    .fas {
-        color: white;
-    }
-
-    footer {
-        max-width: 100%;
-        background-color: #4c6faf;
-        color: #ffffff;
-    }
-
-    footer a {
-        text-decoration: none;
-        color: #ffffff;
-    }
-
-
-    h2 {
-        font-size: 3em;
-    }
-
-    h5 {
-
-        font-size: 2em;
-        margin-left: 20px;
-
-
-        color: rgb(63, 63, 63);
-        padding: 20px;
-    }
-
-    div.tp-dfwv {
-        display: none !important;
-    }
-
-    input,
-    textarea,
-    select {
-        background-color: #ffffff;
-        /* blanc */
-        color: #000000;
-        /* texte noir */
-
-    }
-
-    nav li {
-
-        text-decoration: none;
-        color: white;
-    }
-
-    .breathe-animation span {
-        display: none;
-    }
 
     @media screen and (max-width: 968px) {
 
@@ -140,46 +56,7 @@ if (isset($_POST['logout'])) {
             display: none;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-    .recherche-container {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: none;
-        max-width: 100%;
-        transition: opacity 0.5s ease;
-        padding: 20px;
-
-    }
-
-    .recherche-container .fas {
-        color: #000000;
-    }
-
-    .recherche-container-bottom .fas {
-        color: #000000;
-    }
-
-
-
 
     .eco-ride {
         position: absolute;
@@ -212,7 +89,7 @@ if (isset($_POST['logout'])) {
         color: white;
     }
 
-    .box h5 {
+    .box h3 {
         color: white;
     }
 
@@ -340,7 +217,7 @@ if (isset($_POST['logout'])) {
 
 
         <h2>404</h2>
-        <h5>Oups! La page que vous recherchez n'existe pas.</h5>
+        <h3>Oups! La page que vous recherchez n'existe pas.</h3>
         <p>Il se peut que la page ait été supprimée, renommée ou qu'elle soit temporairement indisponible.</p>
 
 

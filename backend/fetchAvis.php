@@ -1,30 +1,11 @@
 <?php
 header('Content-Type: application/json');
-session_start();
 
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || !isset($_SESSION['user_id'])) {
-    echo json_encode(['error' => 'Utilisateur non connecté']);
+require __DIR__ . '/pdo.php';
+if (!isset($pdo) || !($pdo instanceof PDO)) {
+    echo json_encode(['error' => 'Connexion à la base de données impossible.']);
     exit();
 }
-
-$avisId = $_GET['avis_id'] ?? null;
-if (empty($avisId)) {
-    echo json_encode(['error' => 'ID de l\'avis manquant']);
-    exit();
-}
-
-require_once __DIR__ . '/../vendor/autoload.php';
-
-use Dotenv\Dotenv;
-
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
-
-$host = $_ENV['DB_HOST'];
-$port = $_ENV['DB_PORT'];
-$dbname = $_ENV['DB_NAME'];
-$user = $_ENV['DB_USER'];
-$pass = $_ENV['DB_PASSWORD'];
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $user, $pass);

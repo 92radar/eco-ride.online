@@ -1,29 +1,11 @@
 <?php
-session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-ini_set('log_errors', 'On');
-ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
-require_once __DIR__ . '/../vendor/autoload.php'; // Ajuste selon ton chemin d'autoload
+require __DIR__ . '/pdo.php';
 
-use Dotenv\Dotenv;
+    if (!isset($pdo) || !($pdo instanceof PDO)) {
+        echo json_encode(['error' => 'Connexion à la base de données impossible.']);
+        exit();
+    }
 
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../'); // remonte d’un dossier vers eco-ride.online/
-$dotenv->load();
-
-if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SESSION['user_id'])) {
-    $userId = $_SESSION['user_id'];
-
-
-    $host = $_ENV['DB_HOST'];
-    $port = $_ENV['DB_PORT'];
-    $dbname = $_ENV['DB_NAME'];
-    $user = $_ENV['DB_USER'];
-    $pass = $_ENV['DB_PASSWORD'];
-
-
-    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $covoiturageInfo = null; // Initialisation de $covoiturageInfo
@@ -46,10 +28,21 @@ if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SES
         } catch (PDOException $e) {
             echo "Erreur lors de la récupération des informations du covoiturage : " . $e->getMessage();
         }
+
+        try {
+            $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE user_id = :user_id");
+            $stmt->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
+            $stmt->execute();
+            $userInfo = $stmt->fetch(PDO::FETCH_OBJ);
+        }
+        catch (PDOException $e) {
+            echo "Erreur lors de la récupération des informations de l'utilisateur : " . $e->getMessage();
+        }
     }
 
 
     if (isset($_POST['confirmer_participation'])) {
+
         $covoiturage_id = $_POST['covoiturage_id'];
         $nb_place = $_POST['nb_place'];
         $credit_depense = $covoiturageInfo->prix_personne * $nb_place;
@@ -62,7 +55,6 @@ if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SES
             $covoiturage = $stmt->fetch(PDO::FETCH_OBJ);
 
             if ($covoiturage && $covoiturage->nb_place >= $nb_place) {
-                // Mettre à jour le nombre de places restantes
                 $new_nb_place = $covoiturage->nb_place - $nb_place;
                 $update_stmt = $pdo->prepare("UPDATE covoiturages SET nb_place = :new_nb_place WHERE covoiturage_id = :covoiturage_id");
                 $update_stmt->bindParam(':new_nb_place', $new_nb_place, PDO::PARAM_INT);
@@ -88,6 +80,4 @@ if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true && isset($_SES
         } catch (PDOException $e) {
             $error = "Erreur lors de la confirmation de la participation : " . $e->getMessage();
         }
-        // Logique pour confirmer la participation
     }
-}

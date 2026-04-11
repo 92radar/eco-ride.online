@@ -1,32 +1,5 @@
-h1 {
-    color: #ddd;
-}
-
-.recherche-multicriteres {
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-
-    /* Aligner verticalement les éléments */
-    border: solid 1px transparent;
 
 
-    /* Bordure pour l'unité */
-    border-radius: 30px;
-    /* Bords arrondis */
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-
-
-}
-
-.recherche-multicriteres .fas {
-    color: black;
-
-
-
-}
 
 @media screen and (max-width: 968px) {
     .recherche-multicriteres ::placeholder {
@@ -36,42 +9,6 @@ h1 {
 
 }
 
-.recherche-multicriteres label {
-    margin-right: 5px;
-}
-
-.recherche-multicriteres input[type="text"],
-.recherche-multicriteres input[type="date"] {
-    padding: 8px;
-    margin-right: 10px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    max-width: auto;
-    flex: 1;
-    /* 👈 Ajout clé */
-    min-width: 0;
-}
-
-.recherche-multicriteres button {
-    padding: 10px 15px;
-    background-color: #fafafa;
-    color: rgb(11, 11, 11);
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    margin-left: auto;
-}
-
-
-
-button svg {
-    width: 24px;
-    /* Ajustez la largeur de l'icône */
-    height: 24px;
-    /* Ajustez la hauteur de l'icône */
-    fill: rgb(2, 2, 2);
-    /* Couleur de remplissage de l'icône */
-}
 
 @media screen and (max-width: 968px) {
     .hero-scene-content {

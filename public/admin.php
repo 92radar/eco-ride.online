@@ -13,233 +13,23 @@ if (isset($_POST['logout'])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../styles/profile-1.css">
-    <link rel="stylesheet" href="../styles/account.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../styles/homecopy.css">
-    <link rel="stylesheet" href="../styles/research.css">
-    <link rel="stylesheet" href="../styles/font.css">
 
-    <link rel="stylesheet" href="../styles/covoiturage.css">
+
+    <link rel="stylesheet" href="../styles/app.css">
     <title>Espace de Travail - Admin Eco ride</title>
 </head>
 
 <style>
-    .profil {
-        max-width: 100%;
-        margin: 30px auto;
-    }
 
-
-
-    input,
-    textarea,
-    select {
-        background-color: #ffffff;
-        /* blanc */
-        color: #000000;
-        /* texte noir */
-
-    }
-
-    .recherche-container {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: none;
-        max-width: 100%;
-        transition: opacity 0.5s ease;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 24px;
-        color: #ffffff;
-    }
-
-    .eco-ride {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 100%;
-        max-height: 100%;
-        transition: opacity 0.5s ease;
-        font-size: 3em;
-        font-weight: lighter;
-        color: #ffffff;
-        display: none;
-        text-decoration: none;
-
-    }
-
-
-
-    .eco-ride.show {
-        display: block;
-    }
-
-    .profil button {
-        width: 100%;
-        padding: 10px;
-        background-color: #4c6faf;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-    }
-
-    .profil-header button {
-        width: 100%;
-        padding: 10px;
-        background-color: #4c6faf;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-    }
-
-    input[type="file"] {
-        display: block;
-        border: solid 1px #4c6faf;
-        border-radius: 20px;
-        color: black;
-    }
-
-
-
-
-
-
-    li {
-
-        text-decoration: none;
-        color: white;
-    }
-
-    a {
-        text-decoration: none;
-        color: black;
-    }
-
-    .mobile-nav {
-        z-index: 1000;
-    }
-
-    .avis-form h1 {
-        font-size: 24px;
-        color: #000000;
-
-    }
-
-    .avis-form h1:hover {
-        font-size: 24px;
-        color: #000000;
-        text-decoration: none;
-
-    }
-
-    .c-container {
-        margin-top: 0;
-        /* ✅ reste dans le flux */
-        margin-left: 5px auto;
-
-        padding: 10px;
-
-
-        /* ✅ espace depuis le haut */
-    }
-
-    .c-container ul {
-        width: 90vw;
-        max-height: auto;
-        padding: 20px;
-        display: flex;
-        gap: 4vw;
-        margin: 10px;
-    }
-
-    .c-container ul li {
-        list-style-type: none;
-        background-color: #eeeeee;
-        border: 1px solid #dddddd;
-        padding: 10px;
-        max-height: auto;
-        color: #000000;
-
-        flex: 0 0 100%;
-
-    }
-
-
-
-    .c-container ul {
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-
-    }
-
-    .c-container ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    .c-container ul li {
-        scroll-snap-align: center;
-    }
-
-
-
-
-
-
-
-
-    .c-container ul {
-        anchor-name: --my-carousel;
-    }
-
-    .dots {
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .dots button {
-        border: none;
-        background: #ccc;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
-    }
-
-    .dots button.active {
-        background: #333;
-    }
-
-    footer {
-        color: white;
-        text-align: center;
-        padding: 20px;
-        background-color: #4c6faf;
-        border-top: solid 1px #3b3939;
-        font-weight: lighter;
-    }
-
-    footer a {
-        text-decoration: none;
-        color: #ffffff;
-
-    }
 
     .alert-success {
         position: fixed;
@@ -257,125 +47,15 @@ if (isset($_POST['logout'])) {
         transition: opacity 0.5s ease;
     }
 
-    button {
-        margin-top: 10px;
-    }
-
-    .header-profile-picture {
-        position: absolute;
-        top: 20px;
-        right: 10px;
-
-
-    }
-
-    .header-profile-picture img {
-        object-fit: cover;
-        width: 55px;
-        height: 55px;
-    }
 </style>
 
 <body>
-    <nav>
-        <div id="brand">
-            <div class="eco-ride">
-                <h1>ECORIDE</h1>
-            </div>
-            <div class="header-profile-picture">
-                <?php if (isset($_SESSION['photo'])): ?>
-                    <img src="/backend/image.php" alt="Photo de profil" class="photo-utilisateur" height="50" width="50">
-
-                <?php endif; ?>
-
-            </div>
+    <?php include_once __DIR__ . '/../elements/navigation.php'; ?>
 
 
 
-            <div id="word-mark">
-                <div class="recherche-container">
-                    <form action="/covoiturage" method="get" class="form">
-                        <div class="recherche-multicriteres text-black">
-                            <label for="depart"></label>
-                            <input type="text" id="depart" name="depart" placeholder="Ville de départ">
-                            <label for="arrivee"></label>
-                            <input type="text" id="arrivee" name="arrivee" placeholder="Ville d'arrivée"><i
-                                class="fa-solid fa-location-dot"></i>
-                            <label for="date_depart"></label>
-                            <input type="date" id="date_depart" name="date"><i class="fa-solid fa-calendar-days"></i>
-                            <button type="submit" name="search" aria-label="Rechercher" style="float: right;">
-                                <i class="fas fa-search"></i>
+    <div class="m-20 pt-200">
 
-                            </button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-
-            <div id="menu">
-                <!-- Menu Burger -->
-                <div id="menu-toggle">
-                    <div id="menu-icon">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                </div>
-
-                <!-- Menu Classique -->
-                <ul>
-                    <li>
-                        <a href="/"><i class="fas fa-home f"></i><span>Accueil</span></a>
-                    </li>
-                    <?php if (!isset($_SESSION['role'])): ?>
-                        <!-- Affiché seulement si l'utilisateur n'est pas connecté -->
-                        <li class="active">
-                            <a href="/login"><i class="fas fa-home f"></i><span>Connexion</span></a>
-                        </li>
-                        <li>
-                            <a href="../register"><i class="fas fa-key"></i><span>Inscription</span></a>
-                        </li>
-                    <?php endif; ?>
-
-                    <?php if (isset($_SESSION['role'])): ?>
-                        <?php if ($_SESSION['role'] === 'employee'): ?>
-                            <li><a class="dropdown-item" href="/public/employee.php"><i class="fas fa-user"></i></i>Espace
-                                    employés</a></li>
-                        <?php elseif ($_SESSION['role'] === 'user'): ?>
-                            <li><a class="dropdown-item" href="/public/account.php"><i class="fas fa-user"></i></i>Profil</a>
-                            </li>
-                        <?php elseif ($_SESSION['role'] === 'admin'): ?>
-                            <li><a class="dropdown-item" href="/public/admin.php"><i class="fas fa-user"></i></i>Espace
-                                    admin</a>
-                            </li>
-                        <?php endif; ?>
-
-                        <li>
-                            <form method="post" style="display:inline;">
-                                <button class="dropdown-item" name="logout"><i
-                                        class="fas fa-sign-out-alt"></i>Déconnexion</button>
-                            </form>
-                        </li>
-                    <?php endif; ?>
-
-                    <li>
-                        <a href="#"><i class="fas fa-info-circle"></i><span>A propos</span></a>
-                    </li>
-                </ul>
-
-
-            </div>
-    </nav>
-
-
-
-
-
-    <div class="container">
-        <form method="post" class="logout-form" type="hidden">
-            <button type="submit" name="logout" class="logout-btn">Se déconnecter</button>
-        </form>
         <div class="ligne-horizontale"></div></br>
         <?php if (isset($success)) : ?>
             <div class="alert alert-success container" role="alert">
@@ -392,7 +72,7 @@ if (isset($_POST['logout'])) {
             <?php if (!empty($userInfos)): ?>
                 <?php foreach ($userInfos as $userInfo): ?>
 
-                    <h3>Informations personnelles</h3>
+                    <h2>Informations personnelles</h2>
                     <div class="profil-info" id="">
 
                         <form action="" method="post">
@@ -430,20 +110,22 @@ if (isset($_POST['logout'])) {
                         <?php endif; ?>
                         </br>
 
-                        <div class=" profil-actions">
-                            <button type="submit" name="modifier" class="profil-btn">Modifier</button></br>
+                        <div class="center">
+                            <button type="submit" name="modifier" class="btn btn-primary w-50">Modifier</button></br>
 
                         </div></br>
                         </form>
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <label for="photo_profil">Modifier la photo de profil:</label></br>
-                            <input type="file" id="photo_profil" name="photo_profil" accept="image/*"></br>
-                            <small>Formats acceptés: JPG, JPEG, PNG, GIF (max 5MB).</small></br>
-                            <button type="submit" name="upload" class="upload-btn">Upload</button></br>
-                        </form>
+                        <div class="center flex">
+                            <form action="" method="post" class="center flex" enctype="multipart/form-data">
+                                <label for="photo_profil">Modifier la photo de profil:</label>
+                                <input type="file" id="photo_profil" name="photo_profil" accept="image/*">
+                                <small>Formats acceptés: JPG, JPEG, PNG, GIF (max 5MB).</small>
+                                <button type="submit" name="upload" class="btn btn-secondary w-50">Upload</button>
+                            </form>
+                        </div>
 
                         <div class="ligne-horizontale" id="section2"></div></br>
-                        <h3>Créer un compte</h3></br>
+                        <h2>Créer un compte</h2></br>
                         <form action="" method="post">
                             <!-- CSRF Token -->
                             <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
@@ -469,8 +151,10 @@ if (isset($_POST['logout'])) {
                             </select></br>
 
 
-                            <button type="submit" name="creer_compte_employe" class="creer-compte-btn">Créer un nouveau compte
-                            </button></br>
+                            <div class="center p-10 ">
+                                <button type="submit" name="creer_compte_employe" class="btn btn-secondary w-50">Créer un nouveau compte
+                                </button>
+                            </div>
 
 
                         </form>
@@ -479,7 +163,7 @@ if (isset($_POST['logout'])) {
 
 
         <div class="ligne-horizontale" id="section3"></div></br>
-        <h3>Gestion des comptes employé et utilisateur</h3></br>
+        <h2>Gestion des comptes employé et utilisateur</h2></br>
         <form method="GET" id="verifierAvisForm">
             <div class="form-group">
                 <!-- CSRF Token -->
@@ -536,8 +220,10 @@ if (isset($_POST['logout'])) {
                     </select>
                     <input type="hidden" name="user_id" value="<?= htmlspecialchars($userDetails->user_id) ?>">
 
-                    <button type="submit" name="changer_role" class="btn btn-primary">Changer le role</button>
-                    <button type="submit" name="supprimer_compte" class="btn btn-danger">Supprimer le compte</button>
+                    <div class="center p-10 ">
+                        <button type="submit" name="changer_role" class="btn btn-primary w-50 ">Changer le role</button>
+                        <button type="submit" name="supprimer_compte" class="btn btn-danger w-50 ">Supprimer le compte</button>
+                    </div>
                 </form>
             </div>
 
@@ -556,8 +242,8 @@ if (isset($_POST['logout'])) {
 
 
 
-                    <h3>Graphique des activitées de l'entreprise</h3></br>
-                    <h4>Nombre de covoiturages par jour (7 derniers jours)</h4>
+                    <h2>Graphique des activitées de l'entreprise</h2></br>
+                    <h2>Nombre de covoiturages par jour (7 derniers jours)</h2>
                     <div>
                         <canvas id="monGraphiqueCovoiturages"></canvas>
                     </div>
@@ -571,8 +257,8 @@ if (isset($_POST['logout'])) {
 
 
 
-                    <h4>Gains de crédit par jour (<?php echo date('d/m/Y', strtotime($debutPeriode)); ?> au
-                        <?php echo date('d/m/Y', strtotime($finPeriode)); ?>)</h4>
+                    <h2>Gains de crédit par jour (<?php echo date('d/m/Y', strtotime($debutPeriode)); ?> au
+                        <?php echo date('d/m/Y', strtotime($finPeriode)); ?>)</h2>
 
                     <div>
                         <canvas id="monGraphiqueCredits"></canvas>
@@ -580,7 +266,9 @@ if (isset($_POST['logout'])) {
 
                 </li>
             </ul>
-            <div class="dots"></div>
+            <div class="dots">
+                
+            </div>
 
         </div>
         <script>

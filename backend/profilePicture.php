@@ -1,26 +1,11 @@
 <?php
 
+require __DIR__ . '/pdo.php';
 
-
-require_once __DIR__ . '/../vendor/autoload.php'; // Ajuste selon ton chemin d'autoload
-
-use Dotenv\Dotenv;
-
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../'); // remonte d’un dossier vers eco-ride.online/
-$dotenv->load();
-
-
-
-
-
-$host = $_ENV['DB_HOST'];
-$port = $_ENV['DB_PORT'];
-$dbname = $_ENV['DB_NAME'];
-$user = $_ENV['DB_USER'];
-$pass = $_ENV['DB_PASSWORD'];
-
-
-$pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $user, $pass);
+if (!isset($pdo) || !($pdo instanceof PDO)) {
+    echo "Connexion à la base de données impossible.";
+    exit();
+}
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if (isset($_GET['covoiturage_id'])) {
@@ -50,4 +35,3 @@ if (isset($_GET['covoiturage_id'])) {
 }
 header('Content-Type: image/jpeg');
 echo file_get_contents('../public/uploads/' . $photo->photo);
-var_dump($photo->photo);

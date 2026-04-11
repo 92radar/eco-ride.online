@@ -1,24 +1,11 @@
 <?php
-session_start();
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: https://eco-ride.online');
-    exit;
-}
 
 require_once __DIR__ . '/../backend/accountBe.php';
 
 
-
-
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -32,386 +19,20 @@ require_once __DIR__ . '/../backend/accountBe.php';
         href="https://eco-ride.online/images/IconOnly_Transparent_NoBuffer-2-copie-32.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../styles/profile-1.css">
-    <link rel="stylesheet" href="../styles/account.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../styles/homecopy.css">
-    <link rel="stylesheet" href="../styles/research.css">
-    <link rel="stylesheet" href="../styles/font.css">
 
-    <link rel="stylesheet" href="../styles/covoiturage.css">
+    <link rel="stylesheet" href="../styles/app.css">
 
 
 </head>
-<style>
-    .profil-header {
-        padding-top: 210px;
-        margin: 10px;
-    }
-
-    .profil {
-        max-width: 100%;
-        margin: 30px auto;
-    }
-
-
-
-    input,
-    textarea,
-    select {
-        background-color: #ffffff;
-        /* blanc */
-        color: #000000;
-        /* texte noir */
-
-    }
-
-    .recherche-container {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: none;
-        max-width: 100%;
-        transition: opacity 0.5s ease;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 24px;
-        color: #ffffff;
-    }
-
-    .eco-ride {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 100%;
-        max-height: 100%;
-        transition: opacity 0.5s ease;
-        font-size: 3em;
-        font-weight: lighter;
-        color: #ffffff;
-        display: none;
-        text-decoration: none;
-
-    }
-
-
-
-    .eco-ride.show {
-        display: block;
-    }
-
-    .profil button {
-        width: 100%;
-        padding: 10px;
-        background-color: #4c6faf;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-    }
-
-    .profil-header button {
-        width: 100%;
-        padding: 10px;
-        background-color: #4c6faf;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-    }
-
-    input[type="file"] {
-        display: block;
-        border: solid 1px #4c6faf;
-        border-radius: 20px;
-        color: black;
-    }
-
-    @media (max-width: 930px) {
-        .sidebar {
-            display: none;
-        }
-
-        .logout-form {
-            display: block;
-        }
-    }
-
-
-
-
-    li {
-
-        text-decoration: none;
-        color: white;
-    }
-
-    a {
-        text-decoration: none;
-        color: black;
-    }
-
-    .mobile-nav {
-        z-index: 1000;
-    }
-
-    .avis-form h1 {
-        font-size: 24px;
-        color: #000000;
-
-    }
-
-    .avis-form h1:hover {
-        font-size: 24px;
-        color: #000000;
-        text-decoration: none;
-
-    }
-
-    .c-container {
-        margin-top: 0;
-        /* ✅ reste dans le flux */
-        margin-left: 5px auto;
-
-        padding: 10px;
-
-
-        /* ✅ espace depuis le haut */
-    }
-
-    .c-container ul {
-        width: 90vw;
-        max-height: auto;
-        padding: 20px;
-        display: flex;
-        gap: 4vw;
-        margin: 10px;
-    }
-
-    .c-container ul li {
-        list-style-type: none;
-        background-color: #eeeeee;
-        border: 1px solid #dddddd;
-        padding: 10px;
-        max-height: auto;
-        color: #000000;
-
-        flex: 0 0 100%;
-
-    }
-
-
-
-    .c-container ul {
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-
-    }
-
-    .c-container ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    .c-container ul li {
-        scroll-snap-align: center;
-    }
-
-
-
-
-
-
-
-
-    .c-container ul {
-        anchor-name: --my-carousel;
-    }
-
-    .dots {
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .dots button {
-        border: none;
-        background: #ccc;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
-    }
-
-    .dots button.active {
-        background: #333;
-    }
-
-    footer {
-        color: white;
-        text-align: center;
-        padding: 20px;
-        background-color: #4c6faf;
-        border-top: solid 1px #3b3939;
-        font-weight: lighter;
-    }
-
-    footer a {
-        text-decoration: none;
-        color: #ffffff;
-
-    }
-
-    .iconRecherche {
-        display: none;
-
-
-    }
-
-    .iconRecherche.show {
-        animation: bounceIn 0.5s;
-        display: block;
-    }
-
-    @keyframes bounceIn {
-        0% {
-            transform: scale(0.5);
-            opacity: 0;
-        }
-
-        50% {
-            transform: scale(1.2);
-            opacity: 1;
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-
-    .header-profile-picture {
-        position: absolute;
-        top: 20px;
-        right: 10px;
-
-
-    }
-
-    .header-profile-picture img {
-        object-fit: cover;
-        width: 55px;
-        height: 55px;
-    }
-</style>
 
 <body>
-    <nav>
-        <div id="brand">
-            <div class="eco-ride">
-                <h1>ECORIDE</h1>
-            </div>
-            <div class="header-profile-picture">
-                <?php if (isset($_SESSION['photo'])): ?>
-                    <img src="/backend/image.php" alt="Photo de profil" class="photo-utilisateur" height="50" width="50">
+    <?php include '../elements/navigation.php'; ?>
 
-                <?php endif; ?>
-
-            </div>
-
-
-
-            <div id="word-mark">
-                <div class="recherche-container">
-                    <form action="/covoiturage" method="get" class="form">
-                        <div class="recherche-multicriteres text-black">
-                            <label for="depart"></label><i class="fas fa-location-arrow"></i>&nbsp;
-                            <input type="text" class="depart" name="depart" title="Choisir une ville de départ"
-                                placeholder="Ville de départ">
-                            <label for="arrivee"></label>
-                            <i class="fa-solid fa-location-dot"></i>&nbsp;
-                            <input type="text" class="arrivee" name="arrivee" title="Choisir une ville d'arrivée"
-                                placeholder="Ville d'arrivée">
-                            <label for="date_depart"></label>
-                            <i class="fa-solid fa-calendar-days"></i>&nbsp;
-                            <input type="date" class="date_depart" name="date" class="iconRecherche"
-                                title="Choisir une date de départ">
-                            <button type="submit" name="search" class="iconRecherche" aria-label="Rechercher"
-                                style="float: right;">
-                                <i class="fas fa-search"></i>
-
-                            </button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-
-            <div id="menu">
-                <!-- Menu Burger -->
-                <div id="menu-toggle">
-                    <div id="menu-icon">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                </div>
-
-                <!-- Menu Classique -->
-                <ul>
-                    <li>
-                        <a href="/"><i class="fas fa-home f"></i><span>Accueil</span></a>
-                    </li>
-                    <?php if (!isset($_SESSION['role'])): ?>
-                        <!-- Affiché seulement si l'utilisateur n'est pas connecté -->
-                        <li class="active">
-                            <a href="/login"><i class="fas fa-home f"></i><span>Connexion</span></a>
-                        </li>
-                        <li>
-                            <a href="../register"><i class="fas fa-key"></i><span>Inscription</span></a>
-                        </li>
-                    <?php endif; ?>
-
-                    <?php if (isset($_SESSION['role'])): ?>
-                        <?php if ($_SESSION['role'] === 'employee'): ?>
-                            <li><a class="dropdown-item" href="/employee"><i class="fas fa-user"></i></i>Espace
-                                    employés</a></li>
-                        <?php elseif ($_SESSION['role'] === 'user'): ?>
-                            <li><a class="dropdown-item" href="/account"><i class="fas fa-user"></i></i>Profil</a>
-                            </li>
-                        <?php elseif ($_SESSION['role'] === 'admin'): ?>
-                            <li><a class="dropdown-item" href="/admin"><i class="fas fa-user"></i></i>Espace
-                                    admin</a>
-                            </li>
-                        <?php endif; ?>
-
-                        <li>
-                            <form method="post" style="display:inline;">
-                                <button class="dropdown-item" name="logout"><i
-                                        class="fas fa-sign-out-alt"></i>Déconnexion</button>
-                            </form>
-                        </li>
-                    <?php endif; ?>
-
-                    <li>
-                        <a href="#"><i class="fas fa-info-circle"></i><span>A propos</span></a>
-                    </li>
-                </ul>
-
-
-            </div>
-    </nav>
-
-
-    <div class="profil-header"></br>
-        <form method="post" class="logout-form" type="hidden">
-            <button type="submit" name="logout" class="logout-btn">Se déconnecter</button>
-        </form>
-        <div class="ligne-horizontale"></div></br>
+    <div class="m-20 pt-200"></br>
+        
         <?php if (isset($success)) : ?>
             <div class="alert alert-success container" role="alert">
                 <?= $success ?></br>
@@ -433,7 +54,7 @@ require_once __DIR__ . '/../backend/accountBe.php';
         <div class="profil">
             <?php if (!empty($userInfos)): ?>
                 <?php foreach ($userInfos as $userInfo): ?>
-                    <h3>Informations personnelles</h3>
+                    <h1>Informations personnelles</h1>
                     <div class="profil-info" id="">
 
                         <form action="" method="post">
@@ -475,79 +96,79 @@ require_once __DIR__ . '/../backend/accountBe.php';
                         </br>
                         <!-- CSRF Token -->
                         <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
-                        <div class="profil-actions">
-                            <button type="submit" name="modifier" class="profil-btn">Modifier</button></br>
-
+                        <div class="center">
+                            <button type="submit" name="modifier" class="btn btn-primary w-50">Modifier</button></br>
                         </div></br>
                         </form>
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <label for="photo_profil">Modifier la photo de profil:</label></br>
-                            <input type="file" id="photo_profil" name="photo_profil" accept="image/*"></br>
-                            <small>Formats acceptés: JPG, JPEG, PNG, GIF (max 5MB).</small></br>
-                            <button type="submit" name="upload" class="upload-btn">Upload</button></br>
+                        <form action="" class="flex center" method="post" enctype="multipart/form-data">
+                            <label for="photo_profil">Modifier la photo de profil:</label>
+                            <input type="file" id="photo_profil" name="photo_profil" accept="image/*">
+                            <small>Formats acceptés: JPG, JPEG, PNG, GIF (max 5MB).</small>
+
+                            <div class="center">
+                                <button type="submit" name="upload" class="btn btn-primary">Upload</button>
+                            </div>
                         </form>
 
 
                     </div>
-                    <div class="ligne-horizontale"></div></br>
+                    <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
 
 
-                    <h3>AJOUTER UN VEHICULE</h3> </br>
-                    <div class="devenir-chauffeur" id="section3">
-                        <div class="devenir-chauffeur-details">
-                            <form action="" method="post">
-                                <legend>Informations</legend>
-                                <!-- CSRF Token -->
-                                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
-                                <div class="form-group">
-                                    <label for="marque_vehicule">Marque du véhicule :</label>
-                                    <input type="text" class="form-control" name="marque" id="marque"
-                                        placeholder="Marque de la voiture" required>
-                                    <label for="vehicule">Modele du véhicule :</label>
-                                    <input type="text" class="form-control" name="modele" id="modele"
-                                        placeholder="modele de la voiture" required>
-                                </div>
+                    <h2>AJOUTER UN VEHICULE</h2> </br>
+                    <div id="section3">
+                        
+                        <form action="" method="post">
+                            <legend>Informations</legend>
+                            <!-- CSRF Token -->
+                            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
+                            <div class="form-group">
+                                <label for="marque_vehicule">Marque du véhicule :</label>
+                                <input type="text" class="form-control" name="marque" id="marque"
+                                    placeholder="Marque de la voiture" required>
+                                <label for="vehicule">Modele du véhicule :</label>
+                                <input type="text" class="form-control" name="modele" id="modele"
+                                    placeholder="modele de la voiture" required>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="couleur">Couleur :</label>
-                                    <input type="text" class="form-control" name="couleur" id="couleur_voiture"
-                                        placeholder="Couleur du vehicule, ex: bleu" required>
-                                </div>
+                            <div class="form-group">
+                                <label for="couleur">Couleur :</label>
+                                <input type="text" class="form-control" name="couleur" id="couleur_voiture"
+                                    placeholder="Couleur du vehicule, ex: bleu" required>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="immatriculation">Immatriculation :</label>
-                                    <input type="text" class="form-control" name="immatriculation" id="immatriculation_vehicule"
-                                        placeholder="Immatriculation" required>
-                                </div>
+                            <div class="form-group">
+                                <label for="immatriculation">Immatriculation :</label>
+                                <input type="text" class="form-control" name="immatriculation" id="immatriculation_vehicule"
+                                    placeholder="Immatriculation" required>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="date_immatriculation">Date d'immatriculation :</label>
-                                    <input type="date" class="form-control" name="date_premiere_immatriculation"
-                                        id="date_premiere_immatriculation" placeholder="Date de la premiere immatriculation"
-                                        required>
-                                </div>
-                                <div class="form-group">
+                            <div class="form-group">
+                                <label for="date_immatriculation">Date d'immatriculation :</label>
+                                <input type="date" class="form-control" name="date_premiere_immatriculation"
+                                    id="date_premiere_immatriculation" placeholder="Date de la premiere immatriculation"
+                                    required>
+                            </div>
+                            <div class="form-group">
 
-                                    <label for="energie">Type de voiture :</label></br>
-                                    <select class="form-control" name="energie" id="energie" required>
-                                        <option value="Essence">Essence</option>
-                                        <option value="Hybride">Hybride</option>
-                                        <option value="Electrique">Electrique</option>
-                                    </select></br>
-                                </div>
+                                <label for="energie">Type de voiture :</label></br>
+                                <select class="form-control" name="energie" id="energie" required>
+                                    <option value="Essence">Essence</option>
+                                    <option value="Hybride">Hybride</option>
+                                    <option value="Electrique">Electrique</option>
+                                </select></br>
+                            </div>
 
-
-
-                                <div class="devenir-chauffeur-actions">
-                                    <button class="devenir-chauffeur-btn" type="submit" name="ajouter_vehicule">Ajouter
-                                        un
-                                        vehicule</button>
-                                </div>
-                            </form>
-                        </div>
+                            <div class="center">
+                                <button  type="submit" class="btn btn-primary w-50" name="ajouter_vehicule">Ajouter
+                                un
+                                vehicule</button>
+                            </div>
+                        </form>
+                        
                     </div>
-                    <div class="ligne-horizontale"></div></br>
-                    <h3>Publier un trajet</h3> </br>
+                    <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
+                    <h2>Publier un trajet</h2> </br>
                     <div class="publier-trajet" id="section2">
                         <div class="publier-trajet-details">
                             <form action="" method="post">
@@ -639,8 +260,8 @@ require_once __DIR__ . '/../backend/accountBe.php';
                                     <input type="hidden" type="number" name="prix_publication" id="prix_publication" value="2">
                                 </div></br>
 
-                                <div class="publier-trajet-actions">
-                                    <button type="submit" class="btn btn-primary publier-trajet-btn" name="publier_trajet"
+                                <div class="center">
+                                    <button type="submit" class="btn btn-primary w-50" name="publier_trajet"
                                         <?php if (empty($voitureInfos)) echo 'disabled'; ?>>
                                         Publier le trajet
                                     </button>
@@ -652,8 +273,8 @@ require_once __DIR__ . '/../backend/accountBe.php';
 
                     </div></br>
         </div>
-        <div class="ligne-horizontale"></div></br>
-        <h3 id="section4">Historique des trajets en tant que voyageur</h3>
+        <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
+        <h2 id="section4">Historique des trajets en tant que voyageur</h2>
         <div class="c-container">
             <ul>
 
@@ -682,17 +303,18 @@ require_once __DIR__ . '/../backend/accountBe.php';
             <div class="dots"></div>
         </div>
 
-        <div class="ligne-horizontale"></div></br>
+        <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
         <h2 id="section5">Co-voiturage en tant que chauffeur</h2>
+
         <div class="c-container">
 
 
             <ul>
                 <?php if (!empty($covoituragesEnCours)) : ?>
                     <?php foreach ($covoituragesEnCours as $covoiturage): ?>
+                
                         <li>
-
-
+                        
 
                             <div class="publication">
                                 <i
@@ -749,17 +371,14 @@ require_once __DIR__ . '/../backend/accountBe.php';
                                 </form>
                             </div>
 
-                        <?php endforeach; ?>
-                    <?php else : ?>
-                        <p>Vous n'avez pas de covoiturage en cours.</p>
-                    <?php endif; ?>
-
+                        
                         </li>
+                    <?php endforeach; ?>
+                    <?php else : ?>
+                    <p>Vous n'avez pas de covoiturage en cours.</p>
+                <?php endif; ?>
             </ul>
             <div class="dots"></div>
-
-
-
 
 
         </div>
@@ -767,7 +386,7 @@ require_once __DIR__ . '/../backend/accountBe.php';
 
     </div>
 
-    <div class="ligne-horizontale"></div></br>
+    <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
 
 
 

@@ -1,6 +1,6 @@
 $(() => {
     const nav = $('nav');
-    const menu = $('nav ul');
+    const menu = $('#menu ul');
     const ecoRide = $('.eco-ride');
     const menuToggle = $('#menu-toggle');
     let lastScrollTop = 0;
@@ -52,7 +52,7 @@ $(() => {
         menu.toggleClass('showMenu');
     };
 
-    $('li').on('click', () => {
+    $('#menu li').on('click', () => {
         menu.removeClass('showMenu');
         menuToggle.removeClass('closeMenu');
     });

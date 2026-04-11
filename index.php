@@ -1,39 +1,10 @@
 <?php
-session_start();
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SESSION['user_id'])) {
-    $userId = $_SESSION['user_id'];
-}
-
-// DIR used for local and prod environments, no need to change it when deploying
 
 
 require_once __DIR__ . '/backend/indexBe.php';
 require_once __DIR__ . '/backend/send.php';
 
 
-if (isset($_POST['logout'])) {
-    // Détruire toutes les variables de session
-    $_SESSION = array();
-
-    if (ini_get("session.use_cookies")) {
-        $params = session_get_cookie_params();
-        setcookie(
-            session_name(),
-            '',
-            time() - 42000,
-            $params["path"],
-            $params["domain"],
-            $params["secure"],
-            $params["httponly"]
-        );
-    }
-
-    session_destroy();
-
-    // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
-    header("Location: https://eco-ride.online"); // Redirige vers la page home
-    exit();
-}
 
 ?>
 
@@ -53,95 +24,24 @@ if (isset($_POST['logout'])) {
 
     <!-- datadog -->
     <script src="https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js" type="text/javascript"></script>
-   <script type="module" src="../JS/app.js"></script>
+    <script type="module" src="../JS/app.js"></script>
 
     <!-- Stylesheets -->
 
-    <link rel="stylesheet" href="../styles/font.css">
+    <link rel="stylesheet" href="../styles/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../styles/profile-1.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 
-
-
-
-
-
-    <link rel="stylesheet" href="../styles/homecopy.css">
-
-    <link rel="stylesheet" href="../styles/research.css">
-    <link rel="stylesheet" href="../styles/footer.css">
-    <title>ECORIDE - Page d'Accueil</title>
+    <title>ECORIDE</title>
 
 
 </head>
 <style>
-body {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    max-width: 100%;
-}
-
-span {
-    color: white;
-}
-
-.fas {
-    color: white;
-}
-
-footer {
-    max-width: 100%;
-    background-color: #4c6faf;
-    color: #ffffff;
-}
-
-footer a {
-    text-decoration: none;
-    color: #ffffff;
-}
 
 
-h2 {
-    font-size: 3em;
-}
-
-h5 {
-
-    font-size: 2em;
-    margin-left: 20px;
-
-
-    color: rgb(63, 63, 63);
-    padding: 20px;
-}
-
-div.tp-dfwv {
-    display: none !important;
-}
-
-input,
-textarea,
-select {
-    background-color: #ffffff;
-    /* blanc */
-    color: #000000;
-    /* texte noir */
-
-}
-
-nav li {
-
-    text-decoration: none;
-    color: white;
-}
-
-.breathe-animation span {
-    display: none;
-}
 
 @media screen and (max-width: 968px) {
 
@@ -156,60 +56,11 @@ nav li {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-.recherche-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    transform: none;
-    max-width: 100%;
-    transition: opacity 0.5s ease;
-    padding: 20px;
-
-}
-
-.recherche-container .fas {
-    color: #000000;
-}
-
-.recherche-container-bottom .fas {
-    color: #000000;
 }
 
 
 
 
-.eco-ride {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%;
-    max-height: 100%;
-    transition: opacity 0.5s ease;
-    font-size: 3em;
-    font-weight: lighter;
-    color: #ffffff;
-    display: none;
-
-}
 
 @media screen and (max-width: 968px) {
     .eco-ride {
@@ -219,32 +70,15 @@ nav li {
 
 }
 
-.eco-ride.show {
-    display: block;
-}
-
 .box p {
     color: white;
 }
 
-.box h5 {
+.box h3 {
     color: white;
 }
 
-main {
-    background-color: #4c6faf;
-}
 
-.iconRecherche {
-    display: none;
-
-
-}
-
-.iconRecherche.show {
-    animation: bounceIn 0.5s;
-    display: block;
-}
 
 @keyframes bounceIn {
     0% {
@@ -277,96 +111,8 @@ main {
 
 
 <body>
-    <nav>
-        <div id="brand">
-            <div class="eco-ride">
-                <img src="../images/FullLogo_Transparent_NoBuffer-2.png" alt="logo ecoride">
-                <div class="breathe-animation">
-                    <span>ECORIDE</span>
-                </div>
-            </div>
-
-
-
-            <div id="word-mark">
-                <div class="recherche-container">
-                    <form action="/covoiturage" method="get" class="recherche form">
-                        <div class="recherche-multicriteres text-black">
-                            <label for="depart"></label><i class="fas fa-location-arrow"></i>&nbsp;
-                            <input type="text" class="depart" name="depart" title="Choisir une ville de départ"
-                                placeholder="Départ">
-                            <label for="arrivee"></label>
-                            <i class="fa-solid fa-location-dot"></i>&nbsp;
-                            <input type="text" class="arrivee" name="arrivee" title="Choisir une ville d'arrivée"
-                                placeholder="Arrivée">
-                            <label for="date_depart"></label>
-                            <i class="fa-solid fa-calendar-days"></i>&nbsp;
-                            <input type="date" class="date_depart" name="date" title="Choisir une date de départ">
-                            <button type="submit" name="search" id="submitSearchBtn" class="iconRecherche"
-                                aria-label="Rechercher" style="float: right;">
-                                <i class="fas fa-search"></i>
-
-                            </button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-
-            <div id="menu">
-                <!-- Menu Burger -->
-                <div id="menu-toggle">
-                    <div id="menu-icon">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                </div>
-
-                <!-- Menu Classique -->
-                <ul>
-                    <li>
-                        <a href="/"><i class="fas fa-home f"></i><span>Accueil</span></a>
-                    </li>
-                    <?php if (!isset($_SESSION['role'])): ?>
-                    <!-- Affiché seulement si l'utilisateur n'est pas connecté -->
-                    <li class="active">
-                        <a href="/login"><i class="fas fa-user f"></i><span>Connexion</span></a>
-                    </li>
-                    <li>
-                        <a href="../register"><i class="fas fa-key"></i><span>Inscription</span></a>
-                    </li>
-                    <?php endif; ?>
-
-                    <?php if (isset($_SESSION['role'])): ?>
-                    <?php if ($_SESSION['role'] === 'employee'): ?>
-                    <li><a class="dropdown-item" href="/employee"><i class="fas fa-user"></i></i>Espace
-                            employés</a></li>
-                    <?php elseif ($_SESSION['role'] === 'user'): ?>
-                    <li><a class="dropdown-item" href="/account"><i class="fas fa-user"></i></i>Profil</a>
-                    </li>
-                    <?php elseif ($_SESSION['role'] === 'admin'): ?>
-                    <li><a class="dropdown-item" href="/admin"><i class="fas fa-user"></i></i>Espace
-                            admin</a>
-                    </li>
-                    <?php endif; ?>
-
-                    <li>
-                        <form method="post" style="display:inline;">
-                            <button class="dropdown-item" name="logout"><i
-                                    class="fas fa-sign-out-alt"></i>Déconnexion</button>
-                        </form>
-                    </li>
-                    <?php endif; ?>
-
-                    <li>
-                        <a href="#"><i class="fas fa-info-circle"></i><span>A propos</span></a>
-                    </li>
-                </ul>
-
-
-            </div>
-    </nav>
+    
+    <?php include __DIR__ . '/elements/navigation.php'; ?>
     <div class="c-container">
 
         <h1 style="color: #000000; text-transform: uppercase;">Notre engagement</h1>
@@ -411,12 +157,12 @@ main {
     </div>
 
 
-    <h5>Pourquoi nous choisir ?</h5>
+    <h2>Pourquoi nous choisir ?</h2>
 
     <div class="grid-container">
         <div class="grid-item">
 
-            <h3>Notre Equipe :</h3>
+            <h3 >Notre collectif :</h3>
             <p>Nous sommes fiers de vous présenter notre équipe engagée dans la révolution verte de nos déplacements.
                 Notre équipe se compose d'un Community manager, Mateo, en charge du contenu posté sur ce site et les
                 réseaux sociaux. Il a la charge de répondre à toute vos questions concernant notre plateforme et le
@@ -424,26 +170,23 @@ main {
                 maintenance de notre plateforme. C'est grâce à eux si l'application fonctionne bien et nous permet
                 d'offrir un des meilleurs services de covoiturage en France.</p>
         </div>
-        <br />
+
+    </div>
 
 
-
-
-
-    </div></br></br>
-    <div class="experience">
-
-        <h5>Vivez votre </br>plus belle </br>experience</h5>
-        <br />
-        <p>Réduisez votre impact écologique de 75% en utilisant notre plateforme de co-voiturage.<br /> Nous vous
-            permettons de voyager en toute sécurité et en respectant l'environnement.<br /> Nous sommes la
-            plateforme la
-            plus simple et facile d'accès.<br /> L'expérience que nous avons décidé de vous faire vivre est
-            exceptionnel
-            dans <br />le domaine du co-voiturage, une plateforme facile à prendre en main,<br /> des chauffeurs qui
-            remplissent
-            nos conditions et standard de voyage pour<br /> vous permettre de voyager en toute sérénité et sécurité.
-        </p>
+    <div class="grid-container">
+        <div class="grid-item">
+            <h3 class="">Vivez votre </br>plus belle </br>experience</h3>
+            <p>Réduisez votre impact écologique de 75% en utilisant notre plateforme de co-voiturage.<br /> Nous vous
+                permettons de voyager en toute sécurité et en respectant l'environnement.<br /> Nous sommes la
+                plateforme la
+                plus simple et facile d'accès.<br /> L'expérience que nous avons décidé de vous faire vivre est
+                exceptionnel
+                dans <br />le domaine du co-voiturage, une plateforme facile à prendre en main,<br /> des chauffeurs qui
+                remplissent
+                nos conditions et standard de voyage pour<br /> vous permettre de voyager en toute sérénité et sécurité.
+            </p>
+        </div>
     </div>
 
 
@@ -451,9 +194,9 @@ main {
 
         <main>
             <section>
-                <h2 class="mobile">Nos destinations les plus actives</h2><br />
-                <p class="mobile">
-                    Paris<br />Lyon<br />Marseille<br />Poitiers<br />Montpellier<br />Bordeaux<br />Toulouse<br /></p>
+                <h2 class="mobile uppercase">Nos destinations les plus actives</h2><br />
+                <h3 class="mobile ">
+                    Paris<br />Lyon<br />Marseille<br />Poitiers<br />Montpellier<br />Bordeaux<br />Toulouse<br /></h3>
                 <div class="content">
 
                     <div class="grid">
@@ -542,10 +285,7 @@ main {
         </main>
         <section class="scroll-buffer">
             <div class="box">
-                <h5>Les avantages</h5>
-                <br /><br /><br />
-
-
+                <h2>Les avantages</h2>
 
 
                 <p> Créer du lien social en voyageant avec des personnes qui partagent les mêmes valeurs que vous.
@@ -563,6 +303,16 @@ main {
                     vos déplacements est notre objectif. Participer à la révolution verte en utilisant notre
                     plateforme de
                     co-voiturage.</p></br>
+
+
+                <div class="space-between ">
+                    <img src="https://images.unsplash.com/photo-1566079211528-ec2251fcefb9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                    alt="" />
+                    <img src="https://images.unsplash.com/photo-1635863153370-6cc0a7c01e46?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                    alt="" />
+                </div>
+
+                
             </div><br />
 
 
@@ -570,17 +320,15 @@ main {
 
         </section>
     </div>
-    <div class="search-form-section">
 
-        <div class="search-form-button">
-            <button id="add-search-btn" class="add-search-btn" type="button" aria-label="Ajouter une recherche">
-                <i class="fas fa-plus"></i>
-            </button>
-        </div>
+    <div class="search-form-button">
+        <a id="add-search-btn" class="add-search-btn" href="#ecoride-recherche" aria-label="Ajouter une recherche">
+            <i class="fas fa-plus"></i>
+        </a>
     </div>
 
-    <div class="recherche-container-container">
-        <div class="recherche-container-bottom">
+    <div id="ecoride-recherche" class="hide">
+        <div class="recherche-container-bottom ">
             <form action="/covoiturage" method="get" class="form">
                 <div class="recherche-multicriteres text-black">
                     <label for="depart"></label><i class="fas fa-location-arrow"></i>&nbsp;
@@ -603,7 +351,7 @@ main {
     </div><br /></br></br>
     <div class="tittle"></br>
 
-        <h5>Nos meilleurs avis</h5>
+        <h3>Nos meilleurs avis</h3>
     </div>
     <div class="Avis">
         <ul>
@@ -647,7 +395,7 @@ main {
     </div><br /></br>
 
 
-    <h5>Foire aux questions</h5></br>
+    <h2>Foire aux questions</h2></br>
 
 
     <div class="accordion" id="accordionExample" style="color:#000000">
@@ -707,8 +455,9 @@ main {
 
     <div class="column">
         <div class="column-1">
-            <h2>Merci de votre visite</h2></br>
             <img src="../images/communicate-2.png" alt="image de trois logo de contact,email telephone et messagerie">
+            
+            
         </div>
         <div class="column-1">
             <form action="" method="post">
@@ -733,19 +482,9 @@ main {
         </div>
     </div>
     <footer>
-        <div class="footer-content">
-            <h3>ECORIDE</h3>
-            <p>Rejoignez-nous dans notre mission pour un avenir plus vert et plus durable. Ensemble, nous
-                pouvons faire la différence.</p>
+        <h2>ECORIDE</h2>
+        <p>Designed by <span>Driss</span>Copyright &copy;2026 ECORIDE.</p> 
 
-        </div>
-        <div class="footer-bottom">
-            <p>copyright &copy;2024 ECORIDE. designed by <span>Driss</span> <a
-                    href="https://www.instagram.com/drissbnkiran?igsh=MWpsaTBqNjlsc2EycQ==" target="_blank"
-                    rel="noopener">
-                    <i class="fab fa-instagram fa-2x icon"></i>
-                </a></p>
-        </div>
     </footer>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -800,10 +539,23 @@ main {
 
     document.addEventListener("DOMContentLoaded", function() {
         const toggleButton = document.getElementById("add-search-btn");
-        const searchContainer = document.querySelector(".recherche-container-container");
+        const searchContainer = document.querySelector("#ecoride-recherche");
 
-        toggleButton.addEventListener("click", function() {
-            searchContainer.classList.toggle("active");
+        toggleButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            searchContainer.classList.add("active");
+
+            const offset = 120;
+            const targetY = searchContainer.getBoundingClientRect().top + window.pageYOffset - offset;
+
+            window.scrollTo({
+                top: targetY,
+                behavior: "smooth"
+            });
+
+            if (history.replaceState) {
+                history.replaceState(null, "", "#ecoride-recherche");
+            }
         });
     });
     </script>

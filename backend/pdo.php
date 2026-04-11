@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // Chemin vers la racine du projet (où se trouvent .env et .env.local)
@@ -33,4 +36,30 @@ try {
 } catch (PDOException $e) {
     
     die("Erreur de connexion SQL : " . $e->getMessage());
+}
+
+
+
+if (isset($_POST['logout'])) {
+    // Détruire toutes les variables de session
+    $_SESSION = array();
+
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(
+            session_name(),
+            '',
+            time() - 42000,
+            $params["path"],
+            $params["domain"],
+            $params["secure"],
+            $params["httponly"]
+        );
+    }
+
+    session_destroy();
+
+    // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
+    header("Location: https://eco-ride.online"); // Redirige vers la page home
+    exit();
 }
