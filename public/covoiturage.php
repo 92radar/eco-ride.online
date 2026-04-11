@@ -270,7 +270,7 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
 <div class="container" style="text-align: center; margin-top: 20px;">
 
 
-    <h3>Foire aux questions</h3></br>
+    <h2>Foire aux questions</h2></br>
 
 
     <div class="accordion" id="accordionExample" style="color:#000000">
