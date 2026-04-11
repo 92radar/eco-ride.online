@@ -5,7 +5,7 @@ require_once __DIR__ . '/../backend/accountBe.php';
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">

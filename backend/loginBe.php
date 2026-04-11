@@ -83,7 +83,7 @@ if (isset($_POST['submit'])) {
                                     exit();
                                 } elseif ($role == 'user') {
                                     $_SESSION['role'] = 'user';
-                                    // header("Location: https://eco-ride.online/account");
+                                    header("Location: https://eco-ride.online/account");
                                     exit();
                                 }
                             } catch (PDOException $e) {

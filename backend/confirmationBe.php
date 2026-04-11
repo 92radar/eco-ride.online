@@ -28,6 +28,16 @@ require __DIR__ . '/pdo.php';
         } catch (PDOException $e) {
             echo "Erreur lors de la récupération des informations du covoiturage : " . $e->getMessage();
         }
+
+        try {
+            $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE user_id = :user_id");
+            $stmt->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
+            $stmt->execute();
+            $userInfo = $stmt->fetch(PDO::FETCH_OBJ);
+        }
+        catch (PDOException $e) {
+            echo "Erreur lors de la récupération des informations de l'utilisateur : " . $e->getMessage();
+        }
     }
 
 
@@ -45,7 +55,6 @@ require __DIR__ . '/pdo.php';
             $covoiturage = $stmt->fetch(PDO::FETCH_OBJ);
 
             if ($covoiturage && $covoiturage->nb_place >= $nb_place) {
-                // Mettre à jour le nombre de places restantes
                 $new_nb_place = $covoiturage->nb_place - $nb_place;
                 $update_stmt = $pdo->prepare("UPDATE covoiturages SET nb_place = :new_nb_place WHERE covoiturage_id = :covoiturage_id");
                 $update_stmt->bindParam(':new_nb_place', $new_nb_place, PDO::PARAM_INT);

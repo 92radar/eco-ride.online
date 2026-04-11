@@ -4,13 +4,13 @@ if (isset($_POST['search'])) {
     $depart = $_POST['depart'];
     $arrivee = $_POST['arrivee'];
     $date = $_POST['date'];
-    header("Location: http://localhost:3000/public/covoiturage.php?depart=$depart&arrivee=$arrivee&date=$date");
+    header("Location: https://eco-ride.online/public/covoiturage.php?depart=$depart&arrivee=$arrivee&date=$date");
     exit();
 }
 
 ?>
 
-<nav>
+<nav class="">
     <div id="brand">
         <div class="desktop">
             <ul>

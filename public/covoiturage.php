@@ -4,7 +4,7 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">

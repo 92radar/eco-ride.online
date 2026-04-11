@@ -60,6 +60,9 @@
 .p-10 {
     padding: 10px;
 }
+.pt-20{
+    padding-top: 20px;
+}
 .pt-200{
     padding-top: 200px;
 }
@@ -1635,6 +1638,19 @@ covoiturage filters and styles */
     border-radius: 20px;
     cursor: pointer;
     margin-bottom: 10px;
+}
+
+/* confirmation page styles   */
+
+.container-1 {
+    background-color: #fff;
+    border-radius: 8px;
+    border: solid 1px #3b3939;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    word-break: break-word;
+    width: 90%;
+    margin: 20px auto;
 }
 
 
