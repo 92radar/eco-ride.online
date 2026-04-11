@@ -1,61 +1,14 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php'; // Ajuste selon ton chemin d'autoload
 
-use Dotenv\Dotenv;
-
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../'); // remonte d’un dossier vers eco-ride.online/
-$dotenv->load();
+require __DIR__ . '/pdo.php';
 
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SESSION['user_id'])) {
-    $userId = $_SESSION['user_id'];
+if (!isset($pdo) || !($pdo instanceof PDO)) {
+    $error = "Connexion a la base de donnees impossible.";
+    return;
+}
 
-
-
-    $host = $_ENV['DB_HOST'];
-    $port = $_ENV['DB_PORT'];
-    $dbname = $_ENV['DB_NAME'];
-    $user = $_ENV['DB_USER'];
-    $pass = $_ENV['DB_PASSWORD'];
-
-
-    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
-
-
-
-
-
-
-
-    if (isset($_POST['logout'])) {
-        // Détruire toutes les variables de session
-        $_SESSION = array();
-
-        if (ini_get("session.use_cookies")) {
-            $params = session_get_cookie_params();
-            setcookie(
-                session_name(),
-                '',
-                time() - 42000,
-                $params["path"],
-                $params["domain"],
-                $params["secure"],
-                $params["httponly"]
-            );
-        }
-
-        session_destroy();
-
-        // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
-        header("Location: https://eco-ride.online"); // Redirige vers la page home
-        exit();
-    }
-
-
-
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $researcheResult = [];
 
@@ -63,7 +16,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
     $error = null;
 
 
-    if (isset($_GET['depart']) && isset($_GET['arrivee']) && isset($_GET['date'])) {
+    if (isset($_GET['depart']) && isset($_GET['arrivee']) || isset($_GET['date'])) {
         $depart = $_GET['depart'];
         $arrivee = $_GET['arrivee'];
         $date = $_GET['date']; {
@@ -120,15 +73,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
 
 
 
-
-
-
     if (isset($_POST['participer'])) {
 
         $covoiturage_id = $_POST['covoiturage_id'];
         header("Location: https://eco-ride.online/participer?covoiturage_id=$covoiturage_id");
     }
-} else {
-    header("Location: https://eco-ride.online/login");
-    exit();
-}
+
+
+// else {
+//     header("Location: https://eco-ride.online/login");
+//     exit();
+// }

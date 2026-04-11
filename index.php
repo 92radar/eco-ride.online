@@ -1,39 +1,10 @@
 <?php
-session_start();
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SESSION['user_id'])) {
-    $userId = $_SESSION['user_id'];
-}
-
-// DIR used for local and prod environments, no need to change it when deploying
 
 
 require_once __DIR__ . '/backend/indexBe.php';
 require_once __DIR__ . '/backend/send.php';
 
 
-if (isset($_POST['logout'])) {
-    // Détruire toutes les variables de session
-    $_SESSION = array();
-
-    if (ini_get("session.use_cookies")) {
-        $params = session_get_cookie_params();
-        setcookie(
-            session_name(),
-            '',
-            time() - 42000,
-            $params["path"],
-            $params["domain"],
-            $params["secure"],
-            $params["httponly"]
-        );
-    }
-
-    session_destroy();
-
-    // Rediriger vers la page de connexion ou la page actuelle (pour rafraîchir l'affichage)
-    header("Location: https://eco-ride.online"); // Redirige vers la page home
-    exit();
-}
 
 ?>
 
@@ -85,23 +56,7 @@ if (isset($_POST['logout'])) {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
 
 
 
@@ -527,7 +482,7 @@ if (isset($_POST['logout'])) {
         </div>
     </div>
     <footer>
-        <h1>ECORIDE</h1>
+        <h2>ECORIDE</h2>
         <p>Designed by <span>Driss</span>Copyright &copy;2026 ECORIDE.</p> 
 
     </footer>

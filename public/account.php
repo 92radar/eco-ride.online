@@ -1,8 +1,4 @@
 <?php
-// if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-//     // header('Location: https://eco-ride.online');
-//     exit;
-// }
 
 require_once __DIR__ . '/../backend/accountBe.php';
 
@@ -309,15 +305,16 @@ require_once __DIR__ . '/../backend/accountBe.php';
 
         <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
         <h2 id="section5">Co-voiturage en tant que chauffeur</h2>
+
         <div class="c-container">
 
 
             <ul>
                 <?php if (!empty($covoituragesEnCours)) : ?>
                     <?php foreach ($covoituragesEnCours as $covoiturage): ?>
+                
                         <li>
-
-
+                        
 
                             <div class="publication">
                                 <i
@@ -374,12 +371,12 @@ require_once __DIR__ . '/../backend/accountBe.php';
                                 </form>
                             </div>
 
-                        <?php endforeach; ?>
-                    <?php else : ?>
-                        <p>Vous n'avez pas de covoiturage en cours.</p>
-                    <?php endif; ?>
-
+                        
                         </li>
+                    <?php endforeach; ?>
+                    <?php else : ?>
+                    <p>Vous n'avez pas de covoiturage en cours.</p>
+                <?php endif; ?>
             </ul>
             <div class="dots"></div>
 

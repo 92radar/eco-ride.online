@@ -1,3 +1,15 @@
+<?php
+
+if (isset($_POST['search'])) {
+    $depart = $_POST['depart'];
+    $arrivee = $_POST['arrivee'];
+    $date = $_POST['date'];
+    header("Location: http://localhost:3000/public/covoiturage.php?depart=$depart&arrivee=$arrivee&date=$date");
+    exit();
+}
+
+?>
+
 <nav>
     <div id="brand">
         <div class="desktop">
@@ -124,3 +136,19 @@
         </div>
     </div>
 </nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const dateDepartInput = document.getElementById("date");
+
+        const today = new Date();
+
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // mois 0-indexé
+        const day = String(today.getDate()).padStart(2, '0');
+
+        const minDate = `${year}-${month}-${day}`;
+        dateDepartInput.min = minDate;
+
+    });
+</script>

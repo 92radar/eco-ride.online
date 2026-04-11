@@ -70,18 +70,6 @@ img {
 }
 
 
-.socials {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    list-style: none;
-
-}
-
-.experience {
-    margin: 30px;
-}
-
 @media screen and (max-width: 900px) {
     .experience h3 {
         font-size: 40px;

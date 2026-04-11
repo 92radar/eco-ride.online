@@ -2,10 +2,6 @@
 
  ini_set('error_log', '/Users/macosdev/Documents/GitHub/ecoRide-DrissBenkirane/php-error.log');
 
-
-
-if (isset($_SESSION['loggedin']) &&  $_SESSION['loggedin'] == true) {
-
     require __DIR__ . '/pdo.php';
 
 
@@ -14,11 +10,9 @@ if (isset($_SESSION['loggedin']) &&  $_SESSION['loggedin'] == true) {
         return;
     }
 
-} else {
 
     require_once __DIR__ . '/../vendor/autoload.php'; // Ajuste selon ton chemin d'autoload
 
-}
 
 use Dotenv\Dotenv;
 

@@ -9,6 +9,7 @@ if (!isset($pdo) || !($pdo instanceof PDO)) {
 }
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
     $userId = $_SESSION['user_id'];
 
