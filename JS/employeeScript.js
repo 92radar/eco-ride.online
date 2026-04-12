@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     <strong class="form-control">Note : ${data.note}</strong><br>
 
-                    <button type="submit" class="btn btn-primary">Changer le statut</button>
+                    <button type="submit" class="btn btn-primary ">Changer le statut</button>
                 </form>
             `;
         } catch (error) {
-            alert(error.message);
+            avisDetails.innerHTML = `<p class="text-danger">${error.message}</p>`;
         }
     });
 });

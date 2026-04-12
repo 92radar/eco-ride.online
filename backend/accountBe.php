@@ -34,7 +34,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SE
         $stmt->bindParam(':id', $userId);
         $stmt->execute();
         $userInfos = $stmt->fetchAll(PDO::FETCH_OBJ);
-        $success = "Bienvenue," . $userInfos[0]->prenom . " " . $userInfos[0]->nom;
+        $success = "Bienvenue, " . $userInfos[0]->prenom . " " . $userInfos[0]->nom;
         // var_dump($userInfos); // Garder pour le débogage si nécessaire
     } catch (PDOException $e) {
         echo "Erreur de base de données : " . $e->getMessage();

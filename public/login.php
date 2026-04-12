@@ -46,26 +46,28 @@ if (empty($_SESSION['csrf_token'])) {
 <body>
     <?php include __DIR__ . '/../elements/navigation.php'; ?>
 
-    <div class="form-container">
+    <div class="form-container mw-100 ">
         <form action="" method="post">
-            <h2>Log in</h2>
+            <h1 class="center">Log in to EcoRide</h1>
             <!-- CSRF Token -->
             <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
-            <div class="input-group">
-                <label for="email">Email</label>
+            <div class="form-control">
+                <label for="email"><strong>Email</strong></label>
                 <input type="email" id="email" name="email" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Mot de passe</label>
+                <label for="password"><strong>Mot de passe</strong></label>
                 <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="btn btn-primary mw-100 w-100" name="submit">Se connecter</button>
+
             </div>
-            <button type="submit" name="submit">Se connecter</button>
             <p>Pas encore de compte ? <a href="../register">Inscrivez-vous</a></p>
+
+
         </form>
     </div>
     <div class="container" style="margin-top:150px; margin-bottom:50px;">
 
-        <h3>Foire aux questions</h3></br>
+        <h2>Foire aux questions</h2></br>
 
 
 

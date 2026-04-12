@@ -41,7 +41,29 @@ require_once __DIR__ . '/backend/send.php';
 </head>
 <style>
 
-
+/* Safari optimization */
+@supports (-webkit-appearance: none) {
+    .grid {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+    
+    .grid>.layer {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+    
+    .scaler img {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+    
+    /* Prevent Safari from repainting during scroll */
+    main section:first-of-type {
+        position: relative;
+        z-index: 1;
+    }
+}
 
 @media screen and (max-width: 968px) {
 
@@ -578,6 +600,9 @@ require_once __DIR__ . '/backend/send.php';
         '(animation-timeline: view()) and (animation-range: 0 100%)'
     );
 
+    // Détection de Safari
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
     const config = {
         theme: 'system',
         enhanced: true,
@@ -592,7 +617,7 @@ require_once __DIR__ . '/backend/send.php';
         expanded: true,
     });
 
-    if (!hasScrollSupport) {
+    if (!hasScrollSupport && !isSafari) {
         gsap.registerPlugin(ScrollTrigger);
         console.info('GSAP ScrollTrigger registered');
     }
@@ -605,14 +630,14 @@ require_once __DIR__ . '/backend/send.php';
         document.documentElement.dataset.layers = config.layers;
         document.documentElement.dataset.stagger = config.stagger;
 
-        if (config.enhanced && !hasScrollSupport) {
+        if (config.enhanced && !hasScrollSupport && !isSafari) {
             // Image scaling
             scalerTl = gsap.timeline({
                     scrollTrigger: {
                         trigger: 'main section:first-of-type',
                         start: 'top -10%',
                         end: 'bottom 80%',
-                        scrub: true,
+                        scrub: 0.5,
                     },
                 })
                 .from(
@@ -636,7 +661,7 @@ require_once __DIR__ . '/backend/send.php';
                         trigger: 'main section:first-of-type',
                         start: 'top -40%',
                         end: 'bottom bottom',
-                        scrub: true,
+                        scrub: 0.5,
                     },
                 })
                 .from(
@@ -675,7 +700,7 @@ require_once __DIR__ . '/backend/send.php';
             layersTl = undefined;
         }
 
-        if (hasScrollSupport) {
+        if (hasScrollSupport && !isSafari) {
             layersCtrl.hidden = !config.enhanced;
             staggerCtrl.hidden = !config.enhanced;
             centerCtrl.hidden = !config.enhanced;
