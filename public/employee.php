@@ -29,23 +29,6 @@ require_once __DIR__ . '/../backend/employeeBe.php';
     }
 
 
-    .alert-success {
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        background-color: #d4edda;
-        color: #155724;
-        padding: 15px 20px;
-        border: 1px solid #c3e6cb;
-        border-radius: 5px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        transform: translateX(-50%);
-        z-index: 1000;
-        opacity: 1;
-        transition: opacity 0.5s ease;
-    }
-
-
 </style>
 
 <body>
@@ -117,6 +100,11 @@ require_once __DIR__ . '/../backend/employeeBe.php';
 
 
                 </div>
+
+                <?php ini_set('display_errors', 1);
+                ini_set('display_startup_errors', 1);
+                error_reporting(E_ALL); ?>
+                
                 <div class="ligne-horizontale" id="section2"></div></br>
                 <h2>Verifier les avis</h2></br>
                 <form method="GET" id="verifierAvisForm">
@@ -172,6 +160,8 @@ require_once __DIR__ . '/../backend/employeeBe.php';
                 <div id="avisVerifieDetails"></div>
 
             <div class="ligne-horizontale"></div></br>
+
+
             <script>
                 // disparition automatique de l'alerte
                 setTimeout(function() {

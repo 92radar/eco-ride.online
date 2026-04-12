@@ -25,29 +25,8 @@ if (isset($_POST['logout'])) {
 
 
     <link rel="stylesheet" href="../styles/app.css">
-    <title>Espace de Travail - Admin Eco ride</title>
+    <title>Administration d'Ecoride</title>
 </head>
-
-<style>
-
-
-    .alert-success {
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        background-color: #d4edda;
-        color: #155724;
-        padding: 15px 20px;
-        border: 1px solid #c3e6cb;
-        border-radius: 5px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        transform: translateX(-50%);
-        z-index: 1000;
-        opacity: 1;
-        transition: opacity 0.5s ease;
-    }
-
-</style>
 
 <body>
     <?php include_once __DIR__ . '/../elements/navigation.php'; ?>

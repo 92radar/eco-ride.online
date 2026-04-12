@@ -157,7 +157,7 @@ require_once __DIR__ . '/backend/send.php';
     </div>
 
 
-    <h2>Pourquoi nous choisir ?</h2>
+    <h2 class="m-20">Pourquoi nous choisir ?</h2>
 
     <div class="grid-container">
         <div class="grid-item">
@@ -283,8 +283,8 @@ require_once __DIR__ . '/backend/send.php';
             </section>
 
         </main>
-        <section class="scroll-buffer">
-            <div class="box">
+        <section class="scroll-buffer ">
+            <div class="box mw-100">
                 <h2>Les avantages</h2>
 
 
@@ -349,7 +349,7 @@ require_once __DIR__ . '/backend/send.php';
             </form>
         </div>
     </div><br /></br></br>
-    <div class="tittle"></br>
+    <div class="tittle m-20"></br>
 
         <h3>Nos meilleurs avis</h3>
     </div>
@@ -395,7 +395,7 @@ require_once __DIR__ . '/backend/send.php';
     </div><br /></br>
 
 
-    <h2>Foire aux questions</h2></br>
+    <h2 class="m-20">Foire aux questions</h2></br>
 
 
     <div class="accordion" id="accordionExample" style="color:#000000">
