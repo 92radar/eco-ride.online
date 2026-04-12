@@ -36,7 +36,7 @@ require_once __DIR__ . '/../backend/registerBe.php';
     <?php endif; ?>
 
     
-    <div class="form-container">
+    <div class="form-container mw-100 ">
         <h1>Inscription à EcoRide</h1>
         <form action="" method="post" class="center flex p-10 " id="form-inscription" onsubmit="return validateForm()">
             <div class="form-control">

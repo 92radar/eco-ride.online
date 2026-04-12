@@ -305,9 +305,8 @@ require_once __DIR__ . '/backend/send.php';
             </section>
 
         </main>
-        <section class="scroll-buffer ">
             <div class="box mw-100">
-                <h2>Les avantages</h2>
+                <h2 class="t-white">Les avantages</h2>
 
 
                 <p> Créer du lien social en voyageant avec des personnes qui partagent les mêmes valeurs que vous.
@@ -327,7 +326,7 @@ require_once __DIR__ . '/backend/send.php';
                     co-voiturage.</p></br>
 
 
-                <div class="space-between ">
+                <div class="space-between">
                     <img src="https://images.unsplash.com/photo-1566079211528-ec2251fcefb9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
                     alt="" />
                     <img src="https://images.unsplash.com/photo-1635863153370-6cc0a7c01e46?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
@@ -337,10 +336,6 @@ require_once __DIR__ . '/backend/send.php';
                 
             </div><br />
 
-
-
-
-        </section>
     </div>
 
     <div class="search-form-button">

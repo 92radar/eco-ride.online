@@ -1357,6 +1357,7 @@ section:last-of-type {
 
 .box {
     padding: 10px;
+    height: 1200px;
 }
 
 /* Bouton centré */
