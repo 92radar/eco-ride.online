@@ -39,10 +39,6 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
 
     @media screen and (max-width: 968px) {
 
-
-
-
-        /* Style bouton burger */
         .filter-button {
 
             position: fixed;
@@ -77,42 +73,7 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
 
   
 
-    @keyframes wobble {
-        0% {
-            transform: translateX(100%);
-        }
 
-        50% {
-            transform: translateX(-10%);
-        }
-
-        100% {
-            transform: translateX(0);
-        }
-    }
-
-   
-
-   
-
-    
-
-
-    @keyframes bounceIn {
-        0% {
-            transform: scale(0.5);
-            opacity: 0;
-        }
-
-        50% {
-            transform: scale(1.2);
-            opacity: 1;
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
 </style>
 
 

@@ -2,6 +2,8 @@
 //affiche les avis sans recharger la page
 
 document.addEventListener('DOMContentLoaded', function () {
+
+
     const selectAvis = document.getElementById('avis_id');
     const avisDetails = document.getElementById('avisDetails');
 
@@ -97,6 +99,7 @@ document.getElementById('avisDetails').addEventListener('submit', async function
         }
     }
 });
+
 //verifier les avis dynamiquement 
 document.addEventListener('DOMContentLoaded', function () {
     const selectVerifiedAvis = document.getElementById('verifiedavis_id');

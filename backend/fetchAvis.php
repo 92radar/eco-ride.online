@@ -1,14 +1,15 @@
 <?php
 header('Content-Type: application/json');
 
+
 require __DIR__ . '/pdo.php';
+
 if (!isset($pdo) || !($pdo instanceof PDO)) {
     echo json_encode(['error' => 'Connexion à la base de données impossible.']);
     exit();
 }
 
 try {
-    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $pdo->prepare("
