@@ -1,8 +1,4 @@
 <?php
-session_start();
-
-
-
 
 require_once __DIR__ . '/../backend/registerBe.php';
 ?>
@@ -24,6 +20,10 @@ require_once __DIR__ . '/../backend/registerBe.php';
 </head>
 
 <body>
+
+<?php include __DIR__ . '/../elements/navigation.php'; ?>
+
+
     <?php if ($error) : ?>
         <div class="alert alert-danger" role="alert">
             <?= $error ?>
@@ -34,141 +34,39 @@ require_once __DIR__ . '/../backend/registerBe.php';
             <?= $success ?>
         </div>
     <?php endif; ?>
-    <nav>
-        <div id="brand">
-            <div>
-            </div>
 
-
-
-            <div id="word-mark">
-                <div class="recherche-container">
-                    <form action="/covoiturage" method="get" class="form">
-                        <div class="recherche-multicriteres text-black">
-                            <label for="depart"></label><i class="fas fa-location-arrow"></i>&nbsp;
-                            <input type="text" id="depart" name="depart" title="Choisir une ville de départ"
-                                placeholder="Ville de départ">
-                            <label for="arrivee"></label>
-                            <i class="fa-solid fa-location-dot"></i>&nbsp;
-                            <input type="text" id="arrivee" name="arrivee" title="Choisir une ville d'arrivée"
-                                placeholder="Ville d'arrivée">
-                            <label for="date_depart"></label>
-                            <i class="fa-solid fa-calendar-days"></i>&nbsp;
-                            <input type="date" id="date_depart" name="date" title="Choisir une date de départ">
-                            <button type="submit" name="search" aria-label="Rechercher" style="float: right;">
-                                <i class="fas fa-search"></i>
-
-                            </button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-
-            <div id="menu">
-                <!-- Menu Burger -->
-                <div id="menu-toggle">
-                    <div id="menu-icon">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                </div>
-
-                <!-- Menu Classique -->
-                <ul>
-                    <li>
-                        <a href="/"><i class="fas fa-home f"></i><span>Accueil</span></a>
-                    </li>
-                    <?php if (!isset($_SESSION['role'])): ?>
-                        <!-- Affiché seulement si l'utilisateur n'est pas connecté -->
-                        <li class="active">
-                            <a href="/login"><i class="fas fa-home f"></i><span>Connexion</span></a>
-                        </li>
-                        <li>
-                            <a href="../register"><i class="fas fa-key"></i><span>Inscription</span></a>
-                        </li>
-                    <?php endif; ?>
-
-                    <?php if (isset($_SESSION['role'])): ?>
-                        <?php if ($_SESSION['role'] === 'employee'): ?>
-                            <li><a class="dropdown-item" href="/public/employee.php"><i class="fas fa-user"></i></i>Espace
-                                    employés</a></li>
-                        <?php elseif ($_SESSION['role'] === 'user'): ?>
-                            <li><a class="dropdown-item" href="/public/account.php"><i class="fas fa-user"></i></i>Profil</a>
-                            </li>
-                        <?php elseif ($_SESSION['role'] === 'admin'): ?>
-                            <li><a class="dropdown-item" href="/public/admin.php"><i class="fas fa-user"></i></i>Espace
-                                    admin</a>
-                            </li>
-                        <?php endif; ?>
-
-                        <li>
-                            <form method="post" style="display:inline;">
-                                <button class="dropdown-item" name="logout"><i
-                                        class="fas fa-sign-out-alt"></i>Déconnexion</button>
-                            </form>
-                        </li>
-                    <?php endif; ?>
-
-                    <li>
-                        <a href="#"><i class="fas fa-info-circle"></i><span>A propos</span></a>
-                    </li>
-                </ul>
-
-
-            </div>
-    </nav>
-
+    
     <div class="form-container">
-        <h2>Inscription</h2>
-        <form action="" method="post" id="form-inscription" onsubmit="return validateForm()">
-            <div class="form-group">
-                <label for="nom">Nom:</label>
+        <h1>Inscription à EcoRide</h1>
+        <form action="" method="post" class="center flex p-10 " id="form-inscription" onsubmit="return validateForm()">
+            <div class="form-control">
+                <label for="nom"><strong>Nom:</strong></label>
                 <input type="text" id="nom" name="nom" required>
-            </div>
-            <div class="form-group">
-                <label for="prenom">Prénom:</label>
+                <label for="prenom"><strong>Prénom:</strong></label>
                 <input type="text" id="prenom" name="prenom" required>
-            </div>
-            <div class="form-group">
-                <label for="prenom">Pseudo:</label>
+                <label for="prenom"><strong>Pseudo:</strong></label>
                 <input type="text" id="pseudo" name="pseudo" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email"><strong>Email:</strong></label>
                 <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="mot_de_passe">Mot de passe:</label>
+                <label for="mot_de_passe"><strong>Mot de passe:</strong></label>
                 <input type="password" id="password" name="password" required>
                 <div id="password-feedback" style="color: red; font-size: 0.9em; margin-top: 5px;"></div>
-
-                </ul>
-            </div>
-            <div class="form-group">
                 <label for="verif_mot_de_passe">Vérifiez le mot de passe:</label>
                 <input type="password" id="verif_mot_de_passe" name="verif_mot_de_passe" required>
                 <div id="password_error" class="error-message"></div>
-            </div>
-            <div class="form-group">
-                <label for="ville">Ville:</label>
+                <label for="ville"><strong>Ville:</strong></label>
                 <input type="text" id="ville" name="ville" required>
-            </div>
-            <div class="form-group">
-                <label for="adresse">Adresse:</label>
+                <label for="adresse"><strong>Adresse:</strong></label>
                 <input type="text" id="adresse" name="adresse" required>
-            </div>
-            <div class="form-group">
-                <label for="telephone">Numéro de téléphone:</label>
+                <label for="telephone"><strong>Numéro de téléphone:</strong></label>
                 <input type="text" id="telephone" name="telephone" required>
+                <label for="date_naissance"><strong>Date de naissance:</strong></label>
+                <input type="date" id="date_naissance" class="form-control" name="date_naissance" max="2007-04-24" required></br>
+            
+
             </div>
 
-            <div class="form-group">
-                <label for="date_naissance">Date de naissance:</label>
-                <input type="date" id="date_naissance" name="date_naissance" max="2007-04-24" required>
-            </div><br />
-            <button type="submit" id="submit-btn" name="submit">S'inscrire</button>
+            <button type="submit" class="btn btn-primary mw-100 mt-20 w-100" name="submit">S'inscrire</button>
         </form>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
@@ -199,7 +97,7 @@ require_once __DIR__ . '/../backend/registerBe.php';
             });
         </script>
     </div>
-    <div class="container" style="margin-top:150px; margin-bottom:50px;">
+    <div class="container pt-200" style="margin-bottom:50px;">
 
         <h3>Foire aux questions</h3></br>
 

@@ -87,19 +87,16 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
 
     <div class="m-20 pt-200">
 
-        <hr style="width: 80%; margin: auto; margin-bottom: 20px;">
-        <div class="alert-message">
             <?php if (isset($error)) : ?> <div class="alert alert-danger" role="alert">
                     <?= $error ?>
                 </div>
             <?php endif; ?>
             <?php if (isset($success)) : ?>
-                <div class="alert alert-success container" role="alert">
+                <div class="alert alert-success" role="alert">
                     <?= $success ?></br>
                     <?= $countSuccess ?>
                 </div>
             <?php endif; ?></br>
-        </div>
 
 
         <?php foreach ($researcheResult as $result): ?>
@@ -388,6 +385,18 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
     <p>Designed by <span>Driss</span>Copyright &copy;2026 ECORIDE.</p> 
 
 </footer>
+<script>
+        // disparition automatique de l'alerte
+        setTimeout(function() {
+            var alert = document.querySelector('.alert-success');
+            if (alert) {
+                alert.style.opacity = '0';
+                setTimeout(function() {
+                    alert.remove();
+                }, 500); 
+            }
+        }, 3000); 
+    </script>
 <script>
     //dropdown menu
     // Gestion du menu déroulant

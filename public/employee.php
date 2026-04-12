@@ -19,17 +19,6 @@ require_once __DIR__ . '/../backend/employeeBe.php';
 </head>
 
 
-<style>
-
-    .avis-form h1:hover {
-        font-size: 24px;
-        color: #000000;
-        text-decoration: none;
-
-    }
-
-
-</style>
 
 <body>
     <?php include_once __DIR__ . '/../elements/navigation.php'; ?>
@@ -101,10 +90,7 @@ require_once __DIR__ . '/../backend/employeeBe.php';
 
                 </div>
 
-                <?php ini_set('display_errors', 1);
-                ini_set('display_startup_errors', 1);
-                error_reporting(E_ALL); ?>
-                
+            
                 <div class="ligne-horizontale" id="section2"></div></br>
                 <h2>Verifier les avis</h2></br>
                 <form method="GET" id="verifierAvisForm">

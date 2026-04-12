@@ -12,6 +12,13 @@ if (!isset($pdo) || !($pdo instanceof PDO)) {
 try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    $avisId = $_GET['avis_id'] ?? null;
+    
+    if (!$avisId) {
+        echo json_encode(['error' => 'ID d\'avis manquant']);
+        exit();
+    }
+
     $stmt = $pdo->prepare("
         SELECT a.*, u.nom, u.prenom
         FROM avis a

@@ -386,7 +386,7 @@ require_once __DIR__ . '/../backend/accountBe.php';
 
     </div>
 
-    <hr style="border: .5px solid #4c6faf; margin: 20px 0;">
+    <hr style="border: .5px solid #4c6faf; width: 90%; margin: 20px auto;">
 
 
 
@@ -413,16 +413,15 @@ require_once __DIR__ . '/../backend/accountBe.php';
 
 
 
-                <div class="avis-form">
 
-                    <form method="post">
+                    <form class="center flex m-20" method="post">
                         <!-- CSRF Token -->
                         <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
                         <input type="hidden" name="covoiturage_id" value="<?= htmlspecialchars($resultat->covoiturage_id) ?>">
                         <input type="hidden" type="number" name="prix_personne"
                             value="<?= htmlspecialchars($resultat->prix_personne) ?>">
                         <input type="hidden" name="chauffeur_id" value="<?= htmlspecialchars($resultat->chauffeur_id) ?>">
-                        <div class="form-group">
+                        <div class="form-group  w-100 p-10">
                             <label for="note">Note (sur 5) :</label>
                             <select class="form-control" name="note" id="note">
                                 <option value="1">1</option>
@@ -431,15 +430,12 @@ require_once __DIR__ . '/../backend/accountBe.php';
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                             </select>
-                        </div>
-                        <div class="form-group">
                             <label for="commentaire">Commentaire :</label>
                             <textarea class="form-control" name="commentaire" id="commentaire" rows="3"></textarea>
                         </div>
-                        <button type="submit" name="poster_avis" class="btn btn-success">Poster votre
+                        <button type="submit" name="poster_avis" class="btn btn-success w-50 ">Poster votre
                             avis</button>
                     </form>
-                </div>
             </div></br>
             </div>
         <?php endif; ?>
@@ -459,6 +455,18 @@ require_once __DIR__ . '/../backend/accountBe.php';
                 </a></p>
         </div>
     </footer>
+    <script>
+        // disparition automatique de l'alerte
+        setTimeout(function() {
+            var alert = document.querySelector('.alert-success');
+            if (alert) {
+                alert.style.opacity = '0';
+                setTimeout(function() {
+                    alert.remove();
+                }, 500); 
+            }
+        }, 3000); 
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const dateDepartInput = document.getElementById("date_depart");
@@ -502,7 +510,6 @@ require_once __DIR__ . '/../backend/accountBe.php';
                     dots[index].classList.add('active');
                 }
 
-                // Mettre à jour le point actif lors du scroll
                 viewport.addEventListener('scroll', () => {
                     const center = viewport.scrollLeft + viewport.offsetWidth / 2;
                     let activeIndex = 0;
