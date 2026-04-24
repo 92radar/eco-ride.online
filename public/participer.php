@@ -26,54 +26,18 @@ require_once __DIR__ . '/../backend/participerBe.php';
 
 
 
-<style>
-
-
-.participer-btn {
-    width: 100%;
-
-    padding: 10px;
-    background-color: #4c6faf;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.container {
-    margin-top: 200px;
-}
-
-
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-
-    50% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-</style>
-
 <body>
    <?php include '../elements/navigation.php'; ?>
 
 
-    <div class="container">
+    <div class="c-container">
         <h1>Informations sur le chauffeur</h1>
         <p class="t-black">
             Voici les informations sur le chauffeur du trajet que vous avez choisi. Si vous souhaitez participer à ce
             trajet,
             cliquez sur le bouton "Participer".
         </p><br>
-        <div class="ligne-horizontale"></div>
+        <hr style="width: 80%; margin: auto; margin-bottom: 20px;">
 
 
         <?php if (!empty($covoiturage)) : ?>
@@ -127,7 +91,7 @@ require_once __DIR__ . '/../backend/participerBe.php';
         <p>Covoiturage non trouvé.</p>
         <?php endif; ?>
 
-        <hr style="width: 80%; margin: auto; margin-bottom: 20px;">
+        <hr style="width: 80%; margin: auto; margin-bottom: 20px; margin-top: 60px;">
         <div class="utilisateur-info">
             <h2>Avis des Participants</h2>
         </div>

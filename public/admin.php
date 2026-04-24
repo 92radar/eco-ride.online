@@ -46,7 +46,7 @@ if (isset($_POST['logout'])) {
                 <?= $error ?></br>
             </div>
         <?php endif; ?>
-        <h1>Profil</h1>
+        <h1>Informations du Profil</h1>
         <div class="profil">
             <?php if (!empty($userInfos)): ?>
                 <?php foreach ($userInfos as $userInfo): ?>

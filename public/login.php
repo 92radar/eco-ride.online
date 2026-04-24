@@ -16,27 +16,8 @@ if (empty($_SESSION['csrf_token'])) {
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
-    <title>Login to Ecoride</title>
+    <title>Se connecter à EcoRide</title>
 </head>
-<style>
-
-
-    @keyframes bounceIn {
-        0% {
-            transform: scale(0.5);
-            opacity: 0;
-        }
-
-        50% {
-            transform: scale(1.2);
-            opacity: 1;
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-</style>
 <?php if (isset($error)) : ?>
     <div class="alert alert-danger" role="alert">
         <?php echo $error; ?>

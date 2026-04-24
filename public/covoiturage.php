@@ -32,54 +32,6 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
 
 
 
-<style>
-
-
-
-
-    @media screen and (max-width: 968px) {
-
-        .filter-button {
-
-            position: fixed;
-            /* Pour qu’il soit toujours visible */
-            bottom: 10px;
-            /* Ajuste en fonction de ton header */
-            right: 20px;
-            z-index: 1000;
-            /* Plus que la sidebar (qui est à 1000) */
-
-            padding: 10px;
-            height: 85px;
-            width: 85px;
-            font-size: 18px;
-            background-color: white;
-            color: black;
-            border: solid 1px #4c6faf;
-            border-radius: 50%;
-            cursor: grab;
-            animation: pulse 2s infinite;
-            -webkit-tap-highlight-color: transparent;
-
-
-        }
-
-        .filter-button .fas {
-            color: #4c6faf;
-        }
-
-
-    }
-
-  
-
-
-</style>
-
-
-
-
-
 <body>
     <?php include_once __DIR__ . '/../elements/navigation.php'; ?>
 

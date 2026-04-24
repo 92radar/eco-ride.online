@@ -1690,3 +1690,58 @@ covoiturage filters and styles */
 }
 
 
+@media screen and (max-width: 968px) {
+
+    .filter-button {
+
+        position: fixed;
+        /* Pour qu’il soit toujours visible */
+        bottom: 10px;
+        /* Ajuste en fonction de ton header */
+        right: 20px;
+        z-index: 1000;
+        /* Plus que la sidebar (qui est à 1000) */
+
+        padding: 10px;
+        height: 85px;
+        width: 85px;
+        font-size: 18px;
+        background-color: white;
+        color: black;
+        border: solid 1px #4c6faf;
+        border-radius: 50%;
+        cursor: grab;
+        animation: pulse 2s infinite;
+        -webkit-tap-highlight-color: transparent;
+
+
+    }
+
+    .filter-button .fas {
+        color: #4c6faf;
+    }
+
+
+}
+
+
+/* Key frames for animations   */
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
