@@ -29,15 +29,16 @@ if (isset($_POST['search'])) {
 
                 <?php if (isset($_SESSION['role'])): ?>
                 <?php if ($_SESSION['role'] === 'employee'): ?>
-                <li><a class="dropdown-item" href="/employee"><i class="fas fa-user"></i></i>Espace
-                        employés</a></li>
+                <li><a href="/employee"><i class="fas fa-user"></i><span>
+                    Espace employés
+                </span></a></li>
                 <?php elseif ($_SESSION['role'] === 'user'): ?>
-                <li><a class="dropdown-item" href="/account"><i class="fas fa-user"></i></i>&nbsp;Profil</a>
+                <li><a href="/account"><i class="fas fa-user"></i><span>&nbsp;Profil</span></a>
                 </li>
                 <?php elseif ($_SESSION['role'] === 'admin'): ?>
-                <li><a class="dropdown-item" href="/admin"><i class="fas fa-user"></i></i>Espace
-                        admin</a>
-                </li>
+                <li><a href="/admin"><i class="fas fa-user"></i><span>
+                    Espace admin
+                </span></a></li>
                 <?php endif; ?>
 
 

@@ -254,7 +254,6 @@ nav ul {
     width: 100vw;
     max-height: 0;
     background: #282929;
-    /* ton $aqua */
     position: absolute;
     top: 100%;
     left: 0;
@@ -279,7 +278,6 @@ nav ul li {
 nav ul.showMenu {
     padding: 20px 0;
     max-height: 300px;
-    /* c'est ça qui "déroule" le menu */
 }
 
 nav ul.showMenu li {
@@ -294,16 +292,11 @@ nav ul.showMenu li {
 
 nav ul.showMenu li a {
     display: flex;
-    /* Flex pour aligner icône + texte */
     align-items: center;
-    /* centre verticalement */
     gap: 8px;
-    /* espace entre icône et texte */
     font-size: 14px;
-
     padding: 8px 12px;
     height: auto;
-    /* laisse le contenu définir la hauteur */
     text-decoration: none;
     color: white;
     border: 1px solid transparent;
