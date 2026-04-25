@@ -145,7 +145,7 @@ require_once __DIR__ . '/backend/send.php';
 
                 <h2>VISION</h2></br>
                 <p>Une plateforme de covoiturage responsable et soucieuse de l’environnement.</p>
-                <img src="../images/vision.png" alt="image d'une ampoule allumé"></br>
+                <img src="../images/vision.png" alt="image d'une ampoule allumé symbolisant l'innovation écologique"></br>
             </li>
 
 
@@ -225,27 +225,27 @@ require_once __DIR__ . '/backend/send.php';
                         <div class="layer">
                             <div>
                                 <img src="https://images.unsplash.com/photo-1719410092943-30d6d78a6382?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Image d'un rond point dans un centre ville en France" />
                             </div>
                             <div>
                                 <img src="https://images.unsplash.com/photo-1559286024-87b48d2fedc6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Rue piétonne dans une ville en France, une terrasse de café avec des gens assis" />
                             </div>
                             <div>
                                 <img src="https://images.unsplash.com/photo-1566079211528-ec2251fcefb9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Rue piétonne dans le centre ville, rue commercante, avec des boutiques et des gens qui circulent" />
                             </div>
                             <div>
                                 <img src="https://images.unsplash.com/photo-1635863153370-6cc0a7c01e46?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Vue aérienne d'une ville en France, montrant les bâtiments et les espaces verts" />
                             </div>
                             <div>
                                 <img src="https://images.unsplash.com/photo-1635863151013-98ad529c5a39?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Vue aérienne d'une  ville en France, avec des bâtiments historiques" />
                             </div>
                             <div>
                                 <img src="https://images.unsplash.com/photo-1632389097299-263a85c94063?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Vue de Montmartre, une colline en France, avec des bâtiments historiques" />
                             </div>
                             <!-- <img src="https://picsum.photos/400/500?random=1" alt="" /> -->
                             <!-- <img src="https://picsum.photos/400/500?random=2" alt="" /> -->
@@ -257,27 +257,27 @@ require_once __DIR__ . '/backend/send.php';
                         <div class="layer">
                             <div>
                                 <img src="https://images.unsplash.com/photo-1618994834439-0abec35cc06c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Vue de Paris, cafés, terrasses et un cyclciste pendant le couché de soleil" />
                             </div>
                             <div>
                                 <img src="https://images.unsplash.com/photo-1632951910303-be174876f616?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Vue aérienne de Paris pendant la nuit, Arc de Triomphe" />
                             </div>
                             <div>
                                 <img src="https://images.unsplash.com/photo-1615147990135-2c4ccb0876e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Place historique dans une ville en France" />
                             </div>
                             <div>
                                 <img src="https://images.unsplash.com/photo-1617209122641-b2ebd32d8e31?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Vue d'une rue piétonne dans un petit village en France, avec des commerces" />
                             </div>
                             <div>
                                 <img src="https://images.unsplash.com/photo-1632951910262-14d8674959e1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Vue d'un grand pont au-dessus de la Seine à Paris, France" />
                             </div>
                             <div>
                                 <img src="https://images.unsplash.com/photo-1635972497448-4bc16d2799cd?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Scooter qui roule dans les rues de la ville" />
                             </div>
                             <!-- <img src="https://picsum.photos/400/500?random=7" alt="" /> -->
                             <!-- <img src="https://picsum.photos/400/500?random=8" alt="" /> -->
@@ -289,16 +289,16 @@ require_once __DIR__ . '/backend/send.php';
                         <div class="layer">
                             <div>
                                 <img src="https://images.unsplash.com/photo-1635972496054-5d488043027e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Rue animée dans une ville en France" />
                             </div>
                             <div>
                                 <img src="https://images.unsplash.com/photo-1451857652021-e406bc6bfea9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="" />
+                                    alt="Vue du Sacré-Cœur à Paris, France" />
                             </div>
                         </div>
                         <div class="scaler">
                             <img src="https://images.unsplash.com/photo-1655574283119-232a804c4ff6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlsbGUlMjBkZSUyMGZyYW5jZXxlbnwwfHwwfHx8MA%3D%3D"
-                                alt="" />
+                                alt="Ligne de tramway à Montpellier, France" />
                         </div>
                     </div>
                 </div>
@@ -328,9 +328,9 @@ require_once __DIR__ . '/backend/send.php';
 
                 <div class="space-between">
                     <img src="https://images.unsplash.com/photo-1566079211528-ec2251fcefb9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                    alt="" />
+                    alt="Rue piétonne dans le centre ville, rue commercante, avec des boutiques et des gens qui circulent"  />
                     <img src="https://images.unsplash.com/photo-1635863153370-6cc0a7c01e46?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                    alt="" />
+                    alt="Vue aérienne d'une ville en France, montrant les bâtiments et les espaces verts" />
                 </div>
 
                 

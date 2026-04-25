@@ -55,7 +55,7 @@ require_once __DIR__ . '/../backend/confirmationBe.php';
                     <div class="profile-picture">
 
                         <img src="/backend/profilePicture.php?covoiturage_id=<?= htmlspecialchars($covoiturageInfo->covoiturage_id) ?>"
-                            alt="Photo de <?= htmlspecialchars($covoiturageInfo->nom) ?>" class="photo-utilisateur"
+                            alt="Photo d'un l'utilisateur d'Eco-Ride" class="photo-utilisateur"
                             height="50" width="50">
                     </div>
                     <div class="author-info">

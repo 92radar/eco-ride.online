@@ -47,7 +47,7 @@ require_once __DIR__ . '/../backend/participerBe.php';
                 <div class="utilisateur-info">
                     <div class="profile-picture">
                         <img src="/backend/profilePicture.php?covoiturage_id=<?= htmlspecialchars($covoiturage->covoiturage_id) ?>"
-                        alt="Photo de <?= htmlspecialchars($covoiturage->nom) ?>" class="photo-utilisateur"
+                        alt="Photo d'un l'utilisateur d'Eco-Ride" class="photo-utilisateur"
                         height="50" width="50">
                     </div>
 
@@ -146,7 +146,7 @@ require_once __DIR__ . '/../backend/participerBe.php';
 
 
                         <img src="/backend/profilePicture.php?covoiturage_id=<?= htmlspecialchars($covoiturage->covoiturage_id) ?>"
-                            alt="Photo de <?= htmlspecialchars($covoiturage->nom) ?>" class="photo-utilisateur"
+                            alt="Photo d'un l'utilisateur d'Eco-Ride" class="photo-utilisateur"
                             height="50" width="50">
                     </div>
                     <div class="author-info">

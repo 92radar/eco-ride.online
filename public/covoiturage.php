@@ -72,7 +72,7 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
                             <div class="profile-picture">
                                 <?php if (!empty($result->covoiturage_id) && !empty($result->nom)): ?>
                                     <img src="/backend/profilePicture.php?covoiturage_id=<?= htmlspecialchars($result->covoiturage_id) ?>"
-                                        alt="Photo de <?= htmlspecialchars($result->nom) ?>" class="photo-utilisateur"
+                                        alt="Photo d'un l'utilisateur d'Eco-Ride" class="photo-utilisateur"
                                         height="50" width="50">
                                 <?php endif; ?>
                             </div>
@@ -242,7 +242,7 @@ require_once __DIR__ . '/../backend/covoiturageBe.php';
         <div class="column-1">
             <h2>Merci de votre visite</h2></br>
             <img src="../images/communicate-2.png"
-                alt="image de trois logo de contact,email telephone et messagerie">
+                alt="image de trois logo de contact, email telephone et messagerie">
         </div>
         <div class="column-1">
             <form action="" method="post">
