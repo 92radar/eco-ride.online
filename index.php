@@ -135,369 +135,324 @@ require_once __DIR__ . '/backend/send.php';
 <body>
     
     <?php include __DIR__ . '/elements/navigation.php'; ?>
-    <div class="c-container">
 
-        <h1 style="color: #000000; text-transform: uppercase;">Notre engagement</h1>
-
-
-        <ul>
-            <li>
-
-                <h2>VISION</h2></br>
-                <p>Une plateforme de covoiturage responsable et soucieuse de l’environnement.</p>
-                <img src="../images/vision.png" alt="image d'une ampoule allumé symbolisant l'innovation écologique"></br>
-            </li>
-
-
-
-
-
-
-            <li>
-
-                <h2>MISSION</h2></br>
-                <p> Soutenir la cause écologique est notre principale mission. Notre objectif est de réduire par
-                    trois
-                    l'impact environnemental de vos déplacements. Participez à la révolution verte en utilisant
-                    notre
-                    plateforme de covoiturage.</p>
-                <img src="../images/mission.png" alt="illustration de la planete terre"></br>
-            </li>
-
-
-
-
-            <li>
-                <h2>VALEURS</h2></br>
-                <p>Chez <u>ECORIDE</u>,Nous prônons des valeurs écologiques pour une consommation responsable et
-                    une
-                    approche pragmatique de la résolution des problèmes actuels.</p><img src="../images/valeurs.png"
-                    alt="image de trois mains qui se reunissent">
-            </li>
-        </ul>
-        <div class="dots"></div>
-    </div>
-
-
-    <h2 class="m-20">Pourquoi nous choisir ?</h2>
-
-    <div class="grid-container">
-        <div class="grid-item">
-
-            <h3 >Notre collectif :</h3>
-            <p>Nous sommes fiers de vous présenter notre équipe engagée dans la révolution verte de nos déplacements.
-                Notre équipe se compose d'un Community manager, Mateo, en charge du contenu posté sur ce site et les
-                réseaux sociaux. Il a la charge de répondre à toute vos questions concernant notre plateforme et le
-                service qu'elle propose. Nous avons Léa, Mathilde et Corentin, en charge du développement et de la
-                maintenance de notre plateforme. C'est grâce à eux si l'application fonctionne bien et nous permet
-                d'offrir un des meilleurs services de covoiturage en France.</p>
+    <main>
+        <div class="c-container">
+            <h1 class="m-20 uppercase center t-blue">ECO-RIDE</h1>
+            <h2 style="color: #000000; text-transform: uppercase;">Notre engagement</h2>
+            <ul>
+                <li>
+                    <h2>VISION</h2></br>
+                    <p>Une plateforme de covoiturage responsable et soucieuse de l’environnement.</p>
+                    <img src="../images/vision.png" alt="image d'une ampoule allumé symbolisant l'innovation écologique"></br>
+                </li>
+                <li>
+                    <h2>MISSION</h2></br>
+                    <p> Soutenir la cause écologique est notre principale mission. Notre objectif est de réduire par
+                        trois
+                        l'impact environnemental de vos déplacements. Participez à la révolution verte en utilisant
+                        notre
+                        plateforme de covoiturage.</p>
+                    <img src="../images/mission.png" alt="illustration de la planete terre"></br>
+                </li>
+                <li>
+                    <h2>VALEURS</h2></br>
+                    <p>Chez <u>ECORIDE</u>,Nous prônons des valeurs écologiques pour une consommation responsable et
+                        une
+                        approche pragmatique de la résolution des problèmes actuels.</p><img src="../images/valeurs.png"
+                        alt="image de trois mains qui se reunissent">
+                </li>
+            </ul>
+            <div class="dots"></div>
+        </div>
+        <h2 class="m-20">Pourquoi nous choisir ?</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3 >Notre collectif :</h3>
+                <p>Nous sommes fiers de vous présenter notre équipe engagée dans la révolution verte de nos déplacements.
+                    Notre équipe se compose d'un Community manager, Mateo, en charge du contenu posté sur ce site et les
+                    réseaux sociaux. Il a la charge de répondre à toute vos questions concernant notre plateforme et le
+                    service qu'elle propose. Nous avons Léa, Mathilde et Corentin, en charge du développement et de la
+                    maintenance de notre plateforme. C'est grâce à eux si l'application fonctionne bien et nous permet
+                    d'offrir un des meilleurs services de covoiturage en France.</p>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3 class="">Vivez votre </br>plus belle </br>experience</h3>
+                <p>Réduisez votre impact écologique de 75% en utilisant notre plateforme de co-voiturage.<br /> Nous vous
+                    permettons de voyager en toute sécurité et en respectant l'environnement.<br /> Nous sommes la
+                    plateforme la
+                    plus simple et facile d'accès.<br /> L'expérience que nous avons décidé de vous faire vivre est
+                    exceptionnel
+                    dans <br />le domaine du co-voiturage, une plateforme facile à prendre en main,<br /> des chauffeurs qui
+                    remplissent
+                    nos conditions et standard de voyage pour<br /> vous permettre de voyager en toute sérénité et sécurité.
+                </p>
+            </div>
         </div>
 
-    </div>
-
-
-    <div class="grid-container">
-        <div class="grid-item">
-            <h3 class="">Vivez votre </br>plus belle </br>experience</h3>
-            <p>Réduisez votre impact écologique de 75% en utilisant notre plateforme de co-voiturage.<br /> Nous vous
-                permettons de voyager en toute sécurité et en respectant l'environnement.<br /> Nous sommes la
-                plateforme la
-                plus simple et facile d'accès.<br /> L'expérience que nous avons décidé de vous faire vivre est
-                exceptionnel
-                dans <br />le domaine du co-voiturage, une plateforme facile à prendre en main,<br /> des chauffeurs qui
-                remplissent
-                nos conditions et standard de voyage pour<br /> vous permettre de voyager en toute sérénité et sécurité.
-            </p>
-        </div>
-    </div>
-
-
-    <div class="content-wrap">
-
-        <main>
-            <section>
-                <h2 class="mobile uppercase">Nos destinations les plus actives</h2><br />
-                <h3 class="mobile ">
-                    Paris<br />Lyon<br />Marseille<br />Poitiers<br />Montpellier<br />Bordeaux<br />Toulouse<br /></h3>
-                <div class="content">
-
-                    <div class="grid">
-                        <div class="layer">
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1719410092943-30d6d78a6382?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Image d'un rond point dans un centre ville en France" />
+            <div class="content-wrap">
+                <section>
+                    <h2 class="mobile uppercase">Nos destinations les plus actives</h2><br />
+                    <h3 class="mobile ">
+                        Paris<br />Lyon<br />Marseille<br />Poitiers<br />Montpellier<br />Bordeaux<br />Toulouse<br /></h3>
+                    <div class="content">
+                        <div class="grid">
+                            <div class="layer">
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1719410092943-30d6d78a6382?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Image d'un rond point dans un centre ville en France" />
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1559286024-87b48d2fedc6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Rue piétonne dans une ville en France, une terrasse de café avec des gens assis" />
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1566079211528-ec2251fcefb9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Rue piétonne dans le centre ville, rue commercante, avec des boutiques et des gens qui circulent" />
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1635863153370-6cc0a7c01e46?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Vue aérienne d'une ville en France, montrant les bâtiments et les espaces verts" />
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1635863151013-98ad529c5a39?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Vue aérienne d'une  ville en France, avec des bâtiments historiques" />
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1632389097299-263a85c94063?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Vue de Montmartre, une colline en France, avec des bâtiments historiques" />
+                                </div>
+                                <!-- <img src="https://picsum.photos/400/500?random=1" alt="" /> -->
+                                <!-- <img src="https://picsum.photos/400/500?random=2" alt="" /> -->
+                                <!-- <img src="https://picsum.photos/400/500?random=3" alt="" /> -->
+                                <!-- <img src="https://picsum.photos/400/500?random=4" alt="" /> -->
+                                <!-- <img src="https://picsum.photos/400/500?random=5" alt="" /> -->
+                                <!-- <img src="https://picsum.photos/400/500?random=6" alt="" /> -->
                             </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1559286024-87b48d2fedc6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Rue piétonne dans une ville en France, une terrasse de café avec des gens assis" />
+                            <div class="layer">
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1618994834439-0abec35cc06c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Vue de Paris, cafés, terrasses et un cyclciste pendant le couché de soleil" />
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1632951910303-be174876f616?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Vue aérienne de Paris pendant la nuit, Arc de Triomphe" />
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1615147990135-2c4ccb0876e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Place historique dans une ville en France" />
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1617209122641-b2ebd32d8e31?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Vue d'une rue piétonne dans un petit village en France, avec des commerces" />
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1632951910262-14d8674959e1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Vue d'un grand pont au-dessus de la Seine à Paris, France" />
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1635972497448-4bc16d2799cd?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Scooter qui roule dans les rues de la ville" />
+                                </div>
+                                <!-- <img src="https://picsum.photos/400/500?random=7" alt="" /> -->
+                                <!-- <img src="https://picsum.photos/400/500?random=8" alt="" /> -->
+                                <!-- <img src="https://picsum.photos/400/500?random=9" alt="" /> -->
+                                <!-- <img src="https://picsum.photos/400/500?random=10" alt="" /> -->
+                                <!-- <img src="https://picsum.photos/400/500?random=11" alt="" /> -->
+                                <!-- <img src="https://picsum.photos/400/500?random=12" alt="" /> -->
                             </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1566079211528-ec2251fcefb9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Rue piétonne dans le centre ville, rue commercante, avec des boutiques et des gens qui circulent" />
+                            <div class="layer">
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1635972496054-5d488043027e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Rue animée dans une ville en France" />
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1451857652021-e406bc6bfea9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                                        alt="Vue du Sacré-Cœur à Paris, France" />
+                                </div>
                             </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1635863153370-6cc0a7c01e46?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Vue aérienne d'une ville en France, montrant les bâtiments et les espaces verts" />
+                            <div class="scaler">
+                                <img src="https://images.unsplash.com/photo-1655574283119-232a804c4ff6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlsbGUlMjBkZSUyMGZyYW5jZXxlbnwwfHwwfHx8MA%3D%3D"
+                                    alt="Ligne de tramway à Montpellier, France" />
                             </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1635863151013-98ad529c5a39?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Vue aérienne d'une  ville en France, avec des bâtiments historiques" />
-                            </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1632389097299-263a85c94063?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Vue de Montmartre, une colline en France, avec des bâtiments historiques" />
-                            </div>
-                            <!-- <img src="https://picsum.photos/400/500?random=1" alt="" /> -->
-                            <!-- <img src="https://picsum.photos/400/500?random=2" alt="" /> -->
-                            <!-- <img src="https://picsum.photos/400/500?random=3" alt="" /> -->
-                            <!-- <img src="https://picsum.photos/400/500?random=4" alt="" /> -->
-                            <!-- <img src="https://picsum.photos/400/500?random=5" alt="" /> -->
-                            <!-- <img src="https://picsum.photos/400/500?random=6" alt="" /> -->
-                        </div>
-                        <div class="layer">
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1618994834439-0abec35cc06c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Vue de Paris, cafés, terrasses et un cyclciste pendant le couché de soleil" />
-                            </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1632951910303-be174876f616?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Vue aérienne de Paris pendant la nuit, Arc de Triomphe" />
-                            </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1615147990135-2c4ccb0876e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Place historique dans une ville en France" />
-                            </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1617209122641-b2ebd32d8e31?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Vue d'une rue piétonne dans un petit village en France, avec des commerces" />
-                            </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1632951910262-14d8674959e1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Vue d'un grand pont au-dessus de la Seine à Paris, France" />
-                            </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1635972497448-4bc16d2799cd?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Scooter qui roule dans les rues de la ville" />
-                            </div>
-                            <!-- <img src="https://picsum.photos/400/500?random=7" alt="" /> -->
-                            <!-- <img src="https://picsum.photos/400/500?random=8" alt="" /> -->
-                            <!-- <img src="https://picsum.photos/400/500?random=9" alt="" /> -->
-                            <!-- <img src="https://picsum.photos/400/500?random=10" alt="" /> -->
-                            <!-- <img src="https://picsum.photos/400/500?random=11" alt="" /> -->
-                            <!-- <img src="https://picsum.photos/400/500?random=12" alt="" /> -->
-                        </div>
-                        <div class="layer">
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1635972496054-5d488043027e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Rue animée dans une ville en France" />
-                            </div>
-                            <div>
-                                <img src="https://images.unsplash.com/photo-1451857652021-e406bc6bfea9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                                    alt="Vue du Sacré-Cœur à Paris, France" />
-                            </div>
-                        </div>
-                        <div class="scaler">
-                            <img src="https://images.unsplash.com/photo-1655574283119-232a804c4ff6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlsbGUlMjBkZSUyMGZyYW5jZXxlbnwwfHwwfHx8MA%3D%3D"
-                                alt="Ligne de tramway à Montpellier, France" />
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-        </main>
-            <div class="box mw-100">
-                <h2 class="t-white">Les avantages</h2>
+                <div class="box mw-100">
+                    <h2 class="t-white">Les avantages</h2>
+                    <p> Créer du lien social en voyageant avec des personnes qui partagent les mêmes valeurs que vous.
+                        Vous avez
+                        la possibilité de rencontrer des personnes de tout horizon et de partager des moments
+                        inoubliables avec
+                        eux. Vous avez aussi la possibilité de voyager en toute sécurité et en respectant
+                        l'environnement.</p>
+                    <p>Soutenir la cause écologique est notre principale mission. Réduire par trois l'impact
+                        environnemental de
+                        vos déplacements est notre objectif. Participer à la révolution verte en utilisant notre
+                        plateforme de
+                        co-voiturage.</p></br>
+                    <div class="space-between">
+                        <img src="https://images.unsplash.com/photo-1566079211528-ec2251fcefb9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                        alt="Rue piétonne dans le centre ville, rue commercante, avec des boutiques et des gens qui circulent"  />
+                        <img src="https://images.unsplash.com/photo-1635863153370-6cc0a7c01e46?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
+                        alt="Vue aérienne d'une ville en France, montrant les bâtiments et les espaces verts" />
+                    </div>
+        
+                </div><br />
+            </div>
+
+        <div class="search-form-button">
+            <a id="add-search-btn" class="add-search-btn" href="#ecoride-recherche" aria-label="Ajouter une recherche">
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
+
+        <div id="ecoride-recherche" class="hide">
+            <div class="recherche-container-bottom ">
+                <form action="/covoiturage" method="get" class="form">
+                    <div class="recherche-multicriteres text-black">
+                        <label for="depart"></label><i class="fas fa-location-arrow"></i>&nbsp;
+                        <input type="text" class="depart" name="depart" title="Choisir une ville de départ"
+                            placeholder="Ville de départ">
+                        <label for="arrivee"></label>
+                        <i class="fa-solid fa-location-dot"></i>&nbsp;
+                        <input type="text" class="arrivee" name="arrivee" title="Choisir une ville d'arrivée"
+                            placeholder="Ville d'arrivée">
+                        <label for="date_depart"></label>
+                        <i class="fa-solid fa-calendar-days"></i>&nbsp;
+                        <input type="date" class="date_depart" name="date" title="Choisir une date de départ">
+                        <button type="submit" name="search" aria-label="Rechercher" style="float: right;">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
 
 
-                <p> Créer du lien social en voyageant avec des personnes qui partagent les mêmes valeurs que vous.
-                    Vous avez
-                    la possibilité de rencontrer des personnes de tout horizon et de partager des moments
-                    inoubliables avec
-                    eux. Vous avez aussi la possibilité de voyager en toute sécurité et en respectant
-                    l'environnement.</p>
-
-
-
-
-                <p>Soutenir la cause écologique est notre principale mission. Réduire par trois l'impact
-                    environnemental de
-                    vos déplacements est notre objectif. Participer à la révolution verte en utilisant notre
-                    plateforme de
-                    co-voiturage.</p></br>
-
-
-                <div class="space-between">
-                    <img src="https://images.unsplash.com/photo-1566079211528-ec2251fcefb9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                    alt="Rue piétonne dans le centre ville, rue commercante, avec des boutiques et des gens qui circulent"  />
-                    <img src="https://images.unsplash.com/photo-1635863153370-6cc0a7c01e46?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHZpbGxlJTIwZGUlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D"
-                    alt="Vue aérienne d'une ville en France, montrant les bâtiments et les espaces verts" />
-                </div>
-
-                
-            </div><br />
-
-    </div>
-
-    <div class="search-form-button">
-        <a id="add-search-btn" class="add-search-btn" href="#ecoride-recherche" aria-label="Ajouter une recherche">
-            <i class="fas fa-plus"></i>
-        </a>
-    </div>
-
-    <div id="ecoride-recherche" class="hide">
-        <div class="recherche-container-bottom ">
-            <form action="/covoiturage" method="get" class="form">
-                <div class="recherche-multicriteres text-black">
-                    <label for="depart"></label><i class="fas fa-location-arrow"></i>&nbsp;
-                    <input type="text" class="depart" name="depart" title="Choisir une ville de départ"
-                        placeholder="Ville de départ">
-                    <label for="arrivee"></label>
-                    <i class="fa-solid fa-location-dot"></i>&nbsp;
-                    <input type="text" class="arrivee" name="arrivee" title="Choisir une ville d'arrivée"
-                        placeholder="Ville d'arrivée">
-                    <label for="date_depart"></label>
-                    <i class="fa-solid fa-calendar-days"></i>&nbsp;
-                    <input type="date" class="date_depart" name="date" title="Choisir une date de départ">
-                    <button type="submit" name="search" aria-label="Rechercher" style="float: right;">
-                        <i class="fas fa-search"></i>
-
+        <div class="tittle m-20">
+            <h3>Nos meilleurs avis</h3>
+        </div>
+        <div class="Avis">
+            <ul>
+                <li>
+                    <p>"J'ai récemment utilisé cette plateforme de covoiturage pour un voyage de Lyon à
+                        Paris, et je suis
+                        extrêmement satisfait de mon expérience. Le processus de réservation était simple et intuitif,
+                        et j'ai pu trouver un conducteur fiable en quelques minutes. Le trajet s'est déroulé sans
+                        encombre, avec un conducteur ponctuel et courtois. De plus, le prix était très compétitif par
+                        rapport aux autres options de transport. Je recommande vivement cette plateforme à tous ceux qui
+                        cherchent une alternative économique et conviviale pour leurs déplacements." - <i>Jean, 34
+                            ans</i>
+                    </p>
+                </li>
+                <li>
+                    <p>"Utiliser cette plateforme de covoiturage a été une expérience fantastique du début à
+                        la fin. J'ai
+                        trouvé un trajet de Marseille à Lyon avec un conducteur très sympathique et professionnel. La
+                        voiture était propre et confortable, ce qui a rendu le voyage agréable. J'ai également apprécié
+                        la flexibilité offerte par la plateforme, me permettant de choisir des horaires qui convenaient
+                        parfaitement à mon emploi du temps. En plus d'économiser de l'argent, j'ai eu l'occasion de
+                        rencontrer des personnes intéressantes en cours de route. Je n'hésiterai pas à utiliser cette
+                        plateforme à nouveau pour mes futurs voyages." - <i>Sophie, 28 ans</i></p>
+                </li>
+                <li>
+                    <p>"Je suis ravi d'avoir découvert cette plateforme de covoiturage ! Mon voyage de
+                        Montpellier à
+                        Nice s'est déroulé sans accroc grâce à un conducteur ponctuel et amical. Le processus de
+                        réservation en ligne était fluide, et j'ai pu choisir parmi plusieurs options de trajets. Le
+                        prix était très abordable, ce qui m'a permis d'économiser par rapport aux autres moyens de
+                        transport. De plus, j'ai apprécié l'aspect écologique du covoiturage, contribuant ainsi à
+                        réduire
+                        mon empreinte carbone. Je recommande vivement cette plateforme à tous ceux qui cherchent une
+                        solution pratique et économique pour leurs déplacements." - <i>Lucas, 30 ans</i></p>
+                </li>
+            </ul>
+            <div class="dots"></div>
+        </div>
+        </div><br /></br>
+        <h2 class="m-20">Foire aux questions</h2></br>
+        <div class="accordion" id="accordionExample" style="color:#000000">
+            <div class="accordion-item">
+                <p class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        Comment reserver un voyage ?
                     </button>
-                </div>
-            </form>
-        </div>
-    </div><br /></br></br>
-    <div class="tittle m-20"></br>
-
-        <h3>Nos meilleurs avis</h3>
-    </div>
-    <div class="Avis">
-        <ul>
-            <li>
-                <p>"J'ai récemment utilisé cette plateforme de covoiturage pour un voyage de Lyon à
-                    Paris, et je suis
-                    extrêmement satisfait de mon expérience. Le processus de réservation était simple et intuitif,
-                    et j'ai pu trouver un conducteur fiable en quelques minutes. Le trajet s'est déroulé sans
-                    encombre, avec un conducteur ponctuel et courtois. De plus, le prix était très compétitif par
-                    rapport aux autres options de transport. Je recommande vivement cette plateforme à tous ceux qui
-                    cherchent une alternative économique et conviviale pour leurs déplacements." - <i>Jean, 34
-                        ans</i>
                 </p>
-            </li>
-            <li>
-                <p>"Utiliser cette plateforme de covoiturage a été une expérience fantastique du début à
-                    la fin. J'ai
-                    trouvé un trajet de Marseille à Lyon avec un conducteur très sympathique et professionnel. La
-                    voiture était propre et confortable, ce qui a rendu le voyage agréable. J'ai également apprécié
-                    la flexibilité offerte par la plateforme, me permettant de choisir des horaires qui convenaient
-                    parfaitement à mon emploi du temps. En plus d'économiser de l'argent, j'ai eu l'occasion de
-                    rencontrer des personnes intéressantes en cours de route. Je n'hésiterai pas à utiliser cette
-                    plateforme à nouveau pour mes futurs voyages." - <i>Sophie, 28 ans</i></p>
-            </li>
-            <li>
-                <p>"Je suis ravi d'avoir découvert cette plateforme de covoiturage ! Mon voyage de
-                    Montpellier à
-                    Nice s'est déroulé sans accroc grâce à un conducteur ponctuel et amical. Le processus de
-                    réservation en ligne était fluide, et j'ai pu choisir parmi plusieurs options de trajets. Le
-                    prix était très abordable, ce qui m'a permis d'économiser par rapport aux autres moyens de
-                    transport. De plus, j'ai apprécié l'aspect écologique du covoiturage, contribuant ainsi à
-                    réduire
-                    mon empreinte carbone. Je recommande vivement cette plateforme à tous ceux qui cherchent une
-                    solution pratique et économique pour leurs déplacements." - <i>Lucas, 30 ans</i></p>
-            </li>
-        </ul>
-        <div class="dots"></div>
-    </div>
-
-
-    </div><br /></br>
-
-
-    <h2 class="m-20">Foire aux questions</h2></br>
-
-
-    <div class="accordion" id="accordionExample" style="color:#000000">
-        <div class="accordion-item">
-            <p class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    Comment reserver un voyage ?
-                </button>
-            </p>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample">
-                <div class="accordion-body"></br>
-                    <strong>Rendez vous sur la page co-voiturage</strong>, connectez-vous a la plateforme et
-                    effectuer
-                    votre premiere recherche, une fois un cocoiturage trouver, cliquer sur le bouton participer.
-                    Rentrer
-                    le nombre de place dint vous avez besoin, cliquez a nouveau sur confirmer et le tour est
-                    joué.
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body"></br>
+                        <strong>Rendez vous sur la page co-voiturage</strong>, connectez-vous a la plateforme et
+                        effectuer
+                        votre premiere recherche, une fois un cocoiturage trouver, cliquer sur le bouton participer.
+                        Rentrer
+                        le nombre de place dint vous avez besoin, cliquez a nouveau sur confirmer et le tour est
+                        joué.
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <p class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Comment annuler un covoiturage ?
-                </button>
-            </p>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample">
-                <div class="accordion-body"></br>
-                    <strong>Rendez vous sur votre profil</strong> descendez tout en bas de la page, dans la
-                    section
-                    "covoiturage en cours", cliquer sur annulez.
+            <div class="accordion-item">
+                <p class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Comment annuler un covoiturage ?
+                    </button>
+                </p>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body"></br>
+                        <strong>Rendez vous sur votre profil</strong> descendez tout en bas de la page, dans la
+                        section
+                        "covoiturage en cours", cliquer sur annulez.
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <p class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Comment poster un avis sur un covoiturage ?
-                </button>
-            </p>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                data-bs-parent="#accordionExample">
-                <div class="accordion-body"></br>
-                    <strong>Une fois le covoiturage terminer</strong> rendez vous sur votre profil, descendez
-                    tout en
-                    bas dans la section "laissez un avis".
+            <div class="accordion-item">
+                <p class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Comment poster un avis sur un covoiturage ?
+                    </button>
+                </p>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body"></br>
+                        <strong>Une fois le covoiturage terminer</strong> rendez vous sur votre profil, descendez
+                        tout en
+                        bas dans la section "laissez un avis".
+                    </div>
                 </div>
             </div>
+        </div></br></br></br>
+        <div class="column">
+            <div class="column-1">
+                <img src="../images/communicate-2.png" alt="image de trois logo de contact,email telephone et messagerie">
+        
+        
+            </div>
+            <div class="column-1">
+                <form action="" method="post">
+                    <fieldset>
+                        <legend>Nous contacter</legend></br>
+                        <label for="nom">Nom :</label></br>
+                        <input type="text" id="nom" name="nom" required></br>
+                        <label for="email">Email :</label></br>
+                        <input type="email" id="email" name="email" required></br>
+                        <label for="objet">Objet :</label></br>
+                        <input type="text" id="objet" name="objet"></br>
+                        <label for="message">Message :</label></br>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <button type="submit" name="formulaire_contact" id="button"> Envoyer</button>
+                    </fieldset>
+                </form>
+            </div>
         </div>
-    </div></br></br></br>
-
-
-    <div class="column">
-        <div class="column-1">
-            <img src="../images/communicate-2.png" alt="image de trois logo de contact,email telephone et messagerie">
-            
-            
-        </div>
-        <div class="column-1">
-            <form action="" method="post">
-                <fieldset>
-                    <legend>Nous contacter</legend></br>
-
-                    <label for="nom">Nom :</label></br>
-                    <input type="text" id="nom" name="nom" required></br>
-
-                    <label for="email">Email :</label></br>
-                    <input type="email" id="email" name="email" required></br>
-
-                    <label for="objet">Objet :</label></br>
-                    <input type="text" id="objet" name="objet"></br>
-
-                    <label for="message">Message :</label></br>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-
-                    <button type="submit" name="formulaire_contact" id="button"> Envoyer</button>
-                </fieldset>
-            </form>
-        </div>
-    </div>
+    </main>
     <footer>
         <h2>ECORIDE</h2>
         <p>Designed by <span>Driss</span>Copyright &copy;2026 ECORIDE.</p> 

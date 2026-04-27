@@ -63,6 +63,11 @@
 .mt-20 {
     margin-top: 20px;
 }
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
 .p-10 {
     padding: 10px;
 }
@@ -716,17 +721,18 @@ form container form styles */
 
 .grid-container {
     position: relative;
-    margin: 20px;
+    margin: 40px;
+
 }
 
 .grid-item {
     background-color: #e5dff9;
-    /* background-color: #eeeeee; */
     border: 1px solid #dddddd;
     padding: 10px;
     max-height: auto;
     flex: 0 0 100%;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .grid-item h3 {
@@ -1422,6 +1428,7 @@ section:last-of-type {
 
 .avis ul li {
     scroll-snap-align: center;
+    padding-bottom: 40px;
 }
 
 .avis ul {
