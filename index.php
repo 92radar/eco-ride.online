@@ -68,7 +68,7 @@ require_once __DIR__ . '/backend/send.php';
 
         <header>
             <div class="c-container">
-                <h1 class="uppercase center t-blue" style="font-family: 'Michroma'; font-size: 56px;">ECO-RIDE</h1>
+                <h1 class="uppercase center t-blue" style="font-family: 'Michroma'; font-size: 46px;">ECO-RIDE</h1>
                 <h2 style="color: #000000;"><u>Notre engagement :</u></h2>
                 <ul>
                     <li>
