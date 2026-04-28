@@ -93,7 +93,7 @@ require_once __DIR__ . '/backend/send.php';
         </header>
 
 
-        <section>
+        <div>
             
             <h2 class="m-20">Pourquoi nous choisir ?</h2>
 
@@ -125,7 +125,7 @@ require_once __DIR__ . '/backend/send.php';
                 </article>
 
             </div>
-        </section>
+        </div>
 
             <div class="content-wrap">
 
