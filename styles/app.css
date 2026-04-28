@@ -506,14 +506,12 @@ section.codePen:nth-child(even) {
     background: var(--nav-bg);
 }
 
-/* --- Header ---
+--- Header ---
+
 header {
     width: 100vw;
-    height: 100vh;
-    background: var(--header-bg);
-    display: flex;
-    padding: auto;
-} */
+    margin: 0 auto;
+}
 
 
 /* Recherche */
@@ -1156,7 +1154,7 @@ form container form styles */
         --font-level: 4;
     }
 
-    header {
+    /* header {
         min-height: 100vh;
         display: grid;
         margin: 0 auto;
@@ -1164,7 +1162,7 @@ form container form styles */
         max-width: calc(100% - (2 * var(--gutter)));
         padding-left: 48px;
         text-align: left;
-    }
+    } */
 
     body {
         display: block;

@@ -62,10 +62,10 @@ require_once __DIR__ . '/backend/send.php';
         <?php endif; ?>
 
         <header>
-            <div class="c-container mt-100">
+            <div class="c-container">
                 <h1 class="uppercase center t-bold t-blue">ECO-RIDE</h1>
                 <h2 style="color: #000000; text-transform: uppercase;">Notre engagement</h2>
-                <ul>
+                <ul class="center">
                     <li>
                         <h2>VISION</h2></br>
                         <p>Une plateforme de covoiturage responsable et soucieuse de l’environnement.</p>
