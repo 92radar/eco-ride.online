@@ -60,7 +60,7 @@ if (isset($_POST['search'])) {
 
 
 
-        <search id="word-mark">
+        <div id="word-mark">
             <div class="recherche-container">
                 <form action="/covoiturage" method="get" role="search" class="recherche form">
                     <div class="recherche-multicriteres">
@@ -82,7 +82,7 @@ if (isset($_POST['search'])) {
                 </form>
 
             </div>
-        </search>
+        </div>
 
         <div id="menu">
             <!-- Menu Burger -->
@@ -139,7 +139,7 @@ if (isset($_POST['search'])) {
     </div>
 </nav>
 
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", () => {
         const dateDepartInput = document.getElementById("date");
 
@@ -153,4 +153,4 @@ if (isset($_POST['search'])) {
         dateDepartInput.min = minDate;
 
     });
-</script>
+</script> -->

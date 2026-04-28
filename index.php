@@ -269,25 +269,23 @@ require_once __DIR__ . '/backend/send.php';
         </div>
 
         <search id="ecoride-recherche" class="hide">
-            <div class="recherche-container-bottom ">
-                <form action="/covoiturage" method="get" role="search" class="form">
-                    <div class="recherche-multicriteres text-black">
-                        <label for="depart"></label><i class="fas fa-location-arrow"></i>&nbsp;
-                        <input type="text" class="depart" name="depart" title="Choisir une ville de départ"
-                            placeholder="Ville de départ">
-                        <label for="arrivee"></label>
-                        <i class="fa-solid fa-location-dot"></i>&nbsp;
-                        <input type="text" class="arrivee" name="arrivee" title="Choisir une ville d'arrivée"
-                            placeholder="Ville d'arrivée">
-                        <label for="date_depart"></label>
-                        <i class="fa-solid fa-calendar-days"></i>&nbsp;
-                        <input type="date" class="date_depart" name="date" title="Choisir une date de départ">
-                        <button type="submit" name="search" aria-label="Rechercher" style="float: right;">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
+            <form action="/covoiturage" method="get" role="search" class="form">
+                <div class="recherche-multicriteres text-black">
+                    <label for="depart"></label><i class="fas fa-location-arrow"></i>&nbsp;
+                    <input type="text" class="depart" name="depart" title="Choisir une ville de départ"
+                        placeholder="Ville de départ">
+                    <label for="arrivee"></label>
+                    <i class="fa-solid fa-location-dot"></i>&nbsp;
+                    <input type="text" class="arrivee" name="arrivee" title="Choisir une ville d'arrivée"
+                        placeholder="Ville d'arrivée">
+                    <label for="date_depart"></label>
+                    <i class="fa-solid fa-calendar-days"></i>&nbsp;
+                    <input type="date" class="date_depart" name="date" title="Choisir une date de départ">
+                    <button type="submit" name="search" aria-label="Rechercher" style="float: right;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
 
         </search>
 
