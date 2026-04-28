@@ -35,99 +35,12 @@ require_once __DIR__ . '/backend/send.php';
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 
-    <title>ECORIDE</title>
+    <title>Bienvenue sur ECO-RIDE</title>
 
 
 </head>
-<style>
-
-/* Safari optimization */
-@supports (-webkit-appearance: none) {
-    .grid {
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-    }
-    
-    .grid>.layer {
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-    }
-    
-    .scaler img {
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-    }
-    
-    /* Prevent Safari from repainting during scroll */
-    main section:first-of-type {
-        position: relative;
-        z-index: 1;
-    }
-}
-
-@media screen and (max-width: 968px) {
-
-    .breathe-animation span {
-        display: block;
-        color: white;
-        font-size: 35px;
-    }
-
-    .eco-ride img {
-        display: none;
-    }
 
 
-}
-
-
-
-
-
-@media screen and (max-width: 968px) {
-    .eco-ride {
-        max-width: 70%;
-
-    }
-
-}
-
-.box p {
-    color: white;
-}
-
-.box h3 {
-    color: white;
-}
-
-
-
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-
-    50% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-</style>
-
-<?php if (isset($success)) : ?>
-<div class="alert alert-success">
-    <?= $success ?>
-</div>
-<?php elseif (isset($error)) : ?>
-<div class="alert alert-danger">
-    <?= $error ?>
-</div>
-<?php endif; ?>
 
 
 
@@ -137,63 +50,86 @@ require_once __DIR__ . '/backend/send.php';
     <?php include __DIR__ . '/elements/navigation.php'; ?>
 
     <main>
-        <div class="c-container">
-            <h1 class="m-20 uppercase center t-blue">ECO-RIDE</h1>
-            <h2 style="color: #000000; text-transform: uppercase;">Notre engagement</h2>
-            <ul>
-                <li>
-                    <h2>VISION</h2></br>
-                    <p>Une plateforme de covoiturage responsable et soucieuse de l’environnement.</p>
-                    <img src="../images/vision.png" alt="image d'une ampoule allumé symbolisant l'innovation écologique"></br>
-                </li>
-                <li>
-                    <h2>MISSION</h2></br>
-                    <p> Soutenir la cause écologique est notre principale mission. Notre objectif est de réduire par
-                        trois
-                        l'impact environnemental de vos déplacements. Participez à la révolution verte en utilisant
-                        notre
-                        plateforme de covoiturage.</p>
-                    <img src="../images/mission.png" alt="illustration de la planete terre"></br>
-                </li>
-                <li>
-                    <h2>VALEURS</h2></br>
-                    <p>Chez <u>ECORIDE</u>,Nous prônons des valeurs écologiques pour une consommation responsable et
-                        une
-                        approche pragmatique de la résolution des problèmes actuels.</p><img src="../images/valeurs.png"
-                        alt="image de trois mains qui se reunissent">
-                </li>
-            </ul>
-            <div class="dots"></div>
+
+        <?php if (isset($success)) : ?>
+        <div class="alert alert-success">
+            <?= $success ?>
         </div>
-        <h2 class="m-20">Pourquoi nous choisir ?</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <h3 >Notre collectif :</h3>
-                <p>Nous sommes fiers de vous présenter notre équipe engagée dans la révolution verte de nos déplacements.
-                    Notre équipe se compose d'un Community manager, Mateo, en charge du contenu posté sur ce site et les
-                    réseaux sociaux. Il a la charge de répondre à toute vos questions concernant notre plateforme et le
-                    service qu'elle propose. Nous avons Léa, Mathilde et Corentin, en charge du développement et de la
-                    maintenance de notre plateforme. C'est grâce à eux si l'application fonctionne bien et nous permet
-                    d'offrir un des meilleurs services de covoiturage en France.</p>
+        <?php elseif (isset($error)) : ?>
+        <div class="alert alert-danger">
+            <?= $error ?>
+        </div>
+        <?php endif; ?>
+
+        <header>
+            <div class="c-container mt-100">
+                <h1 class="uppercase center t-bold t-blue">ECO-RIDE</h1>
+                <h2 style="color: #000000; text-transform: uppercase;">Notre engagement</h2>
+                <ul>
+                    <li>
+                        <h2>VISION</h2></br>
+                        <p>Une plateforme de covoiturage responsable et soucieuse de l’environnement.</p>
+                        <img src="../images/vision.png" alt="image d'une ampoule allumé symbolisant l'innovation écologique"></br>
+                    </li>
+                    <li>
+                        <h2>MISSION</h2></br>
+                        <p> Soutenir la cause écologique est notre principale mission. Notre objectif est de réduire par
+                            trois
+                            l'impact environnemental de vos déplacements. Participez à la révolution verte en utilisant
+                            notre
+                            plateforme de covoiturage.</p>
+                        <img src="../images/mission.png" alt="illustration de la planete terre"></br>
+                    </li>
+                    <li>
+                        <h2>VALEURS</h2></br>
+                        <p>Chez <u>ECORIDE</u>,Nous prônons des valeurs écologiques pour une consommation responsable et
+                            une
+                            approche pragmatique de la résolution des problèmes actuels.</p><img src="../images/valeurs.png"
+                            alt="image de trois mains qui se reunissent">
+                    </li>
+                </ul>
+                <div class="dots"></div>
             </div>
-        </div>
-        <div class="grid-container">
-            <div class="grid-item">
-                <h3 class="">Vivez votre </br>plus belle </br>experience</h3>
-                <p>Réduisez votre impact écologique de 75% en utilisant notre plateforme de co-voiturage.<br /> Nous vous
-                    permettons de voyager en toute sécurité et en respectant l'environnement.<br /> Nous sommes la
-                    plateforme la
-                    plus simple et facile d'accès.<br /> L'expérience que nous avons décidé de vous faire vivre est
-                    exceptionnel
-                    dans <br />le domaine du co-voiturage, une plateforme facile à prendre en main,<br /> des chauffeurs qui
-                    remplissent
-                    nos conditions et standard de voyage pour<br /> vous permettre de voyager en toute sérénité et sécurité.
-                </p>
+        </header>
+
+
+        <section>
+            
+            <h2 class="m-20">Pourquoi nous choisir ?</h2>
+
+            <article class="grid-container">
+                <div class="grid-item">
+                    <h3 >Notre collectif :</h3>
+                    <p>Nous sommes fiers de vous présenter notre équipe engagée dans la révolution verte de nos déplacements.
+                        Notre équipe se compose d'un Community manager, Mateo, en charge du contenu posté sur ce site et les
+                        réseaux sociaux. Il a la charge de répondre à toute vos questions concernant notre plateforme et le
+                        service qu'elle propose. Nous avons Léa, Mathilde et Corentin, en charge du développement et de la
+                        maintenance de notre plateforme. C'est grâce à eux si l'application fonctionne bien et nous permet
+                        d'offrir un des meilleurs services de covoiturage en France.</p>
+                </div>
+            </article>
+
+            <div class="grid-container">
+
+                <article class="grid-item">
+                    <h3 class="">Vivez votre </br>plus belle </br>experience</h3>
+                    <p>Réduisez votre impact écologique de 75% en utilisant notre plateforme de co-voiturage.<br /> Nous vous
+                        permettons de voyager en toute sécurité et en respectant l'environnement.<br /> Nous sommes la
+                        plateforme la
+                        plus simple et facile d'accès.<br /> L'expérience que nous avons décidé de vous faire vivre est
+                        exceptionnel
+                        dans <br />le domaine du co-voiturage, une plateforme facile à prendre en main,<br /> des chauffeurs qui
+                        remplissent
+                        nos conditions et standard de voyage pour<br /> vous permettre de voyager en toute sérénité et sécurité.
+                    </p>
+                </article>
+
             </div>
-        </div>
+        </section>
 
             <div class="content-wrap">
-                <section>
+
+                <section class="codePen">
                     <h2 class="mobile uppercase">Nos destinations les plus actives</h2><br />
                     <h3 class="mobile ">
                         Paris<br />Lyon<br />Marseille<br />Poitiers<br />Montpellier<br />Bordeaux<br />Toulouse<br /></h3>
@@ -283,13 +219,13 @@ require_once __DIR__ . '/backend/send.php';
 
                 <div class="box mw-100">
                     <h2 class="t-white">Les avantages</h2>
-                    <p> Créer du lien social en voyageant avec des personnes qui partagent les mêmes valeurs que vous.
+                    <p class="t-white"> Créer du lien social en voyageant avec des personnes qui partagent les mêmes valeurs que vous.
                         Vous avez
                         la possibilité de rencontrer des personnes de tout horizon et de partager des moments
                         inoubliables avec
                         eux. Vous avez aussi la possibilité de voyager en toute sécurité et en respectant
                         l'environnement.</p>
-                    <p>Soutenir la cause écologique est notre principale mission. Réduire par trois l'impact
+                    <p class="t-white">Soutenir la cause écologique est notre principale mission. Réduire par trois l'impact
                         environnemental de
                         vos déplacements est notre objectif. Participer à la révolution verte en utilisant notre
                         plateforme de
@@ -310,9 +246,9 @@ require_once __DIR__ . '/backend/send.php';
             </a>
         </div>
 
-        <div id="ecoride-recherche" class="hide">
+        <search id="ecoride-recherche" class="hide">
             <div class="recherche-container-bottom ">
-                <form action="/covoiturage" method="get" class="form">
+                <form action="/covoiturage" method="get" role="search" class="form">
                     <div class="recherche-multicriteres text-black">
                         <label for="depart"></label><i class="fas fa-location-arrow"></i>&nbsp;
                         <input type="text" class="depart" name="depart" title="Choisir une ville de départ"
@@ -331,7 +267,7 @@ require_once __DIR__ . '/backend/send.php';
                 </form>
             </div>
 
-        </div>
+        </search>
 
 
         <div class="tittle m-20">

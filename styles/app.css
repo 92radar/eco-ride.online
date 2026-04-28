@@ -63,7 +63,9 @@
 .mt-20 {
     margin-top: 20px;
 }
-
+.mt-100 {
+    margin-top: 100px !important;
+}
 .mb-20 {
     margin-bottom: 20px;
 }
@@ -489,29 +491,29 @@ li button {
 
 
 /* --- Sections --- */
-section {
+section.codePen {
     width: 100vw;
     height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
 }
 
-section:nth-child(odd) {
+section.codePen:nth-child(odd) {
     background: black;
 }
 
-section:nth-child(even) {
+section.codePen:nth-child(even) {
     background: var(--nav-bg);
 }
 
-/* --- Header --- */
+/* --- Header ---
 header {
     width: 100vw;
     height: 100vh;
     background: var(--header-bg);
     display: flex;
     padding: auto;
-}
+} */
 
 
 /* Recherche */
@@ -928,12 +930,12 @@ form container form styles */
 
     @media (prefers-reduced-motion: no-preference) {
         [data-enhanced='true'] {
-            main section:first-of-type {
+            main section.codePen:first-of-type {
                 min-height: 240vh;
             }
 
             @supports (animation-timeline: scroll()) and (animation-range: 0 100%) {
-                main section:first-of-type {
+                main section.codePen:first-of-type {
                     view-timeline: --runner;
                 }
 
@@ -1003,11 +1005,11 @@ form container form styles */
             --gutter: 1rem;
         }
 
-        section .mobile {
+        section.codePen .mobile {
             display: none;
         }
 
-        section .mobile {
+        section.codePen .mobile {
             display: none;
         }
     }
@@ -1169,11 +1171,11 @@ form container form styles */
     }
 
     main,
-    section {
+    section.codePen {
         max-width: 100%;
     }
 
-    section {
+    section.codePen {
         min-height: 100vh;
     }
 
@@ -1181,7 +1183,7 @@ form container form styles */
         overflow: hidden;
     }
 
-    main section:last-of-type {
+    main section.codePen:last-of-type {
         display: grid;
         place-items: center;
     }
@@ -1291,27 +1293,27 @@ form container form styles */
     position: fixed;
 }
 
-section h2 {
+section.codePen h2 {
     margin: 10px;
 }
 
-section .mobile {
+section.codePen .mobile {
     margin: 30px;
     padding: 10px;
     color: white;
 }
 
-section:last-of-type {
+section.codePen:last-of-type {
     padding-bottom: 10px;
     /* ou plus si tu veux plus d'espace */
 }
 
 @media screen and (max-width: 968px) {
-    section .mobile {
+    section.codePen .mobile {
         display: none;
     }
 
-    section .mobile {
+    section.codePen .mobile {
         display: none;
 
 

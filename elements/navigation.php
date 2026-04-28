@@ -60,9 +60,9 @@ if (isset($_POST['search'])) {
 
 
 
-        <div id="word-mark">
+        <search id="word-mark">
             <div class="recherche-container">
-                <form action="/covoiturage" method="get" class="recherche form">
+                <form action="/covoiturage" method="get" role="search" class="recherche form">
                     <div class="recherche-multicriteres">
                         <label for="depart"></label><i class="fas fa-location-arrow"></i>&nbsp;
                         <input type="text" class="depart" name="depart" title="Choisir une ville de départ"
@@ -82,7 +82,7 @@ if (isset($_POST['search'])) {
                 </form>
 
             </div>
-        </div>
+        </search>
 
         <div id="menu">
             <!-- Menu Burger -->
