@@ -34,6 +34,11 @@ require_once __DIR__ . '/backend/send.php';
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
 
     <title>Bienvenue sur ECO-RIDE</title>
 
@@ -63,16 +68,16 @@ require_once __DIR__ . '/backend/send.php';
 
         <header>
             <div class="c-container">
-                <h1 class="uppercase center t-bold t-blue">ECO-RIDE</h1>
-                <h2 style="color: #000000; text-transform: uppercase;">Notre engagement</h2>
-                <ul class="center">
+                <h1 class="uppercase center t-blue" style="font-family: 'Michroma'; font-size: 56px;">ECO-RIDE</h1>
+                <h2 style="color: #000000;"><u>Notre engagement :</u></h2>
+                <ul>
                     <li>
-                        <h3>VISION</h3></br>
+                        <h3>VISION</h3>
                         <p>Une plateforme de covoiturage responsable et soucieuse de l’environnement.</p>
                         <img src="../images/vision.png" alt="image d'une ampoule allumé symbolisant l'innovation écologique" title="image d'une ampoule allumé symbolisant l'innovation écologique"></br>
                     </li>
                     <li>
-                        <h3>MISSION</h3></br>
+                        <h3>MISSION</h3>
                         <p> Soutenir la cause écologique est notre principale mission. Notre objectif est de réduire par
                             trois
                             l'impact environnemental de vos déplacements. Participez à la révolution verte en utilisant
@@ -81,7 +86,7 @@ require_once __DIR__ . '/backend/send.php';
                         <img src="../images/mission.png" alt="illustration de la planete terre" title="illustration de la planete terre"></br>
                     </li>
                     <li>
-                        <h3>VALEURS</h3></br>
+                        <h3>VALEURS</h3>
                         <p>Chez <u>ECORIDE</u>,Nous prônons des valeurs écologiques pour une consommation responsable et
                             une
                             approche pragmatique de la résolution des problèmes actuels.</p><img src="../images/valeurs.png"
@@ -95,7 +100,7 @@ require_once __DIR__ . '/backend/send.php';
 
         <div>
             
-            <h2 class="m-20">Pourquoi nous choisir ?</h2>
+            <h2 class="m-20"><u>Pourquoi nous choisir ?</u></h2>
 
             <article class="grid-container">
                 <div class="grid-item">
@@ -413,6 +418,7 @@ require_once __DIR__ . '/backend/send.php';
     </footer>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
+
         // Tous les carousels
         const carousels = document.querySelectorAll('.c-container, .avis');
 

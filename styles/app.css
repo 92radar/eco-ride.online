@@ -511,11 +511,11 @@ section.codePen:nth-child(even) {
 }
 
 --- Header ---
-
+/* 
 header {
     width: 100vw;
     margin: 0 auto;
-}
+} */
 
 
 /* Recherche */
