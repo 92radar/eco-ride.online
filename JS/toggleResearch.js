@@ -41,6 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const day = String(today.getDate()).padStart(2, '0');
 
     const minDate = `${year}-${month}-${day}`;
-    dateDepartInput.min = minDate;
+
+    if (!dateDepartInput || minDate === "NaN-NaN-NaN") {
+        return;
+    }
+
+    dateDepartInput.setAttribute("min", minDate);
+
+    console.log("Date minimum définie pour le champ date_depart :", minDate);
+
 
 });
